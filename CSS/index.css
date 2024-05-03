@@ -1,0 +1,77 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+* button{
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(18,18,18);
+}
+
+@font-face {
+  font-family: header_font;
+  src: url('../Fonts/header_font.ttf');
+}
+
+@font-face {
+  font-family: normal_font;
+  src: url('../Fonts/normal_font.ttf');
+}
+
+@font-face {
+  font-family: italic_font;
+  src: url('../Fonts/italic_font.ttf');
+}
+
+@font-face {
+  font-family: signature_font;
+  src: url('../Fonts/signature.ttf');
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#container{
+  display: flex;
+  flex-direction: column;
+}
+
+.hero{
+  background-color: transparent;
+  font-family: header_font;
+  line-height: 64px;
+  font-size: 64px;
+  height: fit-content;
+  text-align: center;
+}
+
+.normal_text{
+  background-color: transparent;
+  font-family: normal_font;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 38px;
+  height: fit-content;
+}
+
+
+@keyframes inertiaAnimation {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+.inertia {
+  animation-name: inertiaAnimation;
+  animation-timeline: view();
+} 
+
+
+#projects{
+  height: 100vh;
+}
