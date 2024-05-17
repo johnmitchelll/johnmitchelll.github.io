@@ -8,6 +8,8 @@ var flowFeild;
 var timer = 1000;
 var respawnNum = 1;
 
+var prevWindowDimentions = {width:0, height:0};
+
 function drawEverything (){
   timer--;
   if(timer <= 0){
@@ -26,6 +28,8 @@ function drawEverything (){
       particles[i].edges();
       particles[i].show();
     }
+
+    canvasAlign();
 }
 
 
@@ -59,4 +63,23 @@ function colorCircle(centerX, centerY, radius, drawColor){
   canvasContext.beginPath();
   canvasContext.arc(centerX, centerY, radius, 0,Math.PI*2, true);
   canvasContext.fill(); 
+}
+
+function canvasAlign(){
+	if(prevWindowDimentions.width == window.innerWidth && prevWindowDimentions.height == window.innerHeight){
+    return;
+	}
+
+  clearInterval(perlinInterval);
+
+  var framesPerSecond = 60;
+	perlinInterval = setInterval(function(){drawEverything();},1000/framesPerSecond);
+
+    setTimeout(() => {
+        clearInterval(perlinInterval);
+    }, 30000);
+
+  colorRect(0, 0, canvas.width, canvas.height, "rgb(18,18,18)");
+
+  start();
 }

@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	canvas = document.getElementById('flow_canvas');
 	canvasContext = canvas.getContext('2d');
 
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-
-    canvas.width = screen.width;
-    canvas.height = screen.height;
 
     // colorRect(0,0,canvas.width,canvas.height,'rgb(253,251,248)');
 
@@ -21,15 +16,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var framesPerSecond = 60;
 	perlinInterval = setInterval(function(){drawEverything();},1000/framesPerSecond);
+    setInterval(function(){canvasAlign();},1000/10);
 
     setTimeout(() => {
         clearInterval(perlinInterval);
-        console.log("HELLO")
     }, 30000);
 });
 
 
 function start(){
+
+    prevWindowDimentions.width = window.innerWidth;
+	prevWindowDimentions.height = window.innerHeight;
+
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     cols = Math.ceil(canvas.width / SCALE)+2;
     rows = Math.ceil(canvas.height / SCALE)+2;

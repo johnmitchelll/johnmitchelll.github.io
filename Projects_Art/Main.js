@@ -8,9 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     projectsCanvas.style.width = window.innerWidth + "px";
     projectsCanvas.style.height = window.innerHeight + "px";
 
-    projectsCanvas.width = screen.width;
-    projectsCanvas.height = screen.height;
-
+    projectsCanvas.width = window.innerWidth
+    projectsCanvas.height = window.innerHeight;
 	startProjects();
 
 	var framesPerSecond = 30;

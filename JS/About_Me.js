@@ -3,78 +3,56 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updateDynamicScrollers, 1000/10);
 });
 
-var activeAreaGap = 100;
-var leftSliders = document.getElementsByClassName("left_slider");
-var rightSliders = document.getElementsByClassName("right_slider");
-var dynamicSliders = document.querySelectorAll("#about_me .dynamic_container")
+var activeAreaGap = 150;
+var dynamicSliders = document.querySelectorAll("#about_me .dynamic_container");
 
-const PERCENT_STOPPING = 1;
+var prevInOrOut = new Array(dynamicSliders.length);
+for (let index = 0; index < dynamicSliders.length; index++) {
+  prevInOrOut[index] = -1; 
+}
+
 
 function updateDynamicScrollers(){
 
-    for (let index = 0; index < dynamicSliders.length; index++) {
-      dynamicSliders[index].style.height = (dynamicSliders[index].childNodes[1].offsetHeight+20) + "px";
-    }
+  let activationDiv = document.getElementById("about_me_body");
 
-
-    for (let index = 0; index < leftSliders.length; index++) {
-
-      if(window.scrollY + window.innerHeight/2 <= leftSliders[index].offsetTop + leftSliders[index].offsetHeight/2 + window.innerHeight/2-activeAreaGap &&
-      window.scrollY + window.innerHeight/2 >= leftSliders[index].offsetTop + leftSliders[index].offsetHeight/2 - window.innerHeight/2+activeAreaGap){
-          moveLeftDiv(true, leftSliders[index]);
-      }else{
-          moveLeftDiv(false, leftSliders[index]);
+    if(window.scrollY + window.innerHeight/2 <= activationDiv.offsetTop + activationDiv.offsetHeight/2 + activeAreaGap &&
+    window.scrollY + window.innerHeight/2 >= activationDiv.offsetTop + activationDiv.offsetHeight/2 - activeAreaGap){
+      for (let index = 0; index < dynamicSliders.length; index++) {
+        animateHalf(true, dynamicSliders[index], index);
       }
+    }else{
+      for (let index = 0; index < dynamicSliders.length; index++) {
+        animateHalf(false, dynamicSliders[index], index);
+      }  
+    }
       
-    }
-
-    for (let index = 0; index < rightSliders.length; index++) {
-
-      if(window.scrollY + window.innerHeight/2 <= rightSliders[index].offsetTop + rightSliders[index].offsetHeight/2 + window.innerHeight/2-activeAreaGap &&
-      window.scrollY + window.innerHeight/2 >= rightSliders[index].offsetTop + rightSliders[index].offsetHeight/2 - window.innerHeight/2+activeAreaGap){
-          moveRightDiv(true, rightSliders[index]);
-      }else{
-          moveRightDiv(false, rightSliders[index]);
-      }
-
-    }
 }
 
 
-function moveLeftDiv(forward, div){
-  if(forward){
+function animateHalf(inScreen, div, index){
 
-    if(div.offsetLeft > window.innerWidth-window.innerWidth*PERCENT_STOPPING+30){
+  if(inScreen){
+    if(prevInOrOut[index] == 0 || prevInOrOut[index] == -1){
+      prevInOrOut[index] = 1;
       div.style.animationPlayState = "running";
-    }else{
-      div.style.animationPlayState = "paused";
+
+      setTimeout(() => {
+        if(prevInOrOut[index] != 0){
+          div.style.animationPlayState = "paused";
+        }
+      }, 500);
     }
 
     return;
   }
 
-  if(div.offsetLeft < window.innerWidth){
+  if(prevInOrOut[index] == 1){
     div.style.animationPlayState = "running";
-  }else{
+
+  div.addEventListener("animationiteration", () => {
+    prevInOrOut[index] = 0;
     div.style.animationPlayState = "paused";
-  }
-}
-
-function moveRightDiv(forward, div){
-  if(forward){
-
-    if(div.offsetLeft+div.offsetWidth < window.innerWidth*PERCENT_STOPPING-30){
-      div.style.animationPlayState = "running";
-    }else{
-      div.style.animationPlayState = "paused";
-    }
-
-    return;
-  }
-
-  if(div.offsetLeft+div.offsetWidth > 0){
-    div.style.animationPlayState = "running";
-  }else{
-    div.style.animationPlayState = "paused";
+  });
   }
 }

@@ -1,6 +1,6 @@
-var r = 25;
+var r = 35;
 var g = 25;
-var b = 142;
+var b = 112;
 var rDir = 1;
 var gDir = 1;
 var bDir = 1;
@@ -37,7 +37,7 @@ function Particle() {
     //   bDir = dirMag;
     // }
 
-    colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+', 0.3)')
+    colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.3+'')
   }
 
   this.edges = function() {
