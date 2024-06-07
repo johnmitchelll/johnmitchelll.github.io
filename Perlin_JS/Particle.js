@@ -27,7 +27,7 @@ function Particle() {
 
 
 
-  this.show = function() {
+  this.show = function(color) {
 
     
     // b += bDir;
@@ -37,7 +37,12 @@ function Particle() {
     //   bDir = dirMag;
     // }
 
-    colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.3+'')
+    if(color){
+      colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.3+'')
+    }else{
+      colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.05)')
+    }
+    
   }
 
   this.edges = function() {

@@ -1,0 +1,124 @@
+#rankpro_thumbnail{
+    background-color: var(--purple);
+    position: relative;
+    font-family: header_font;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#rankpro_thumbnail a{
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+
+#rank_circle_dynamic{
+    z-index: 0;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 10%;
+    top: -5%;
+    transform-origin: 100% 50%;
+    border-radius: 50%;
+    background: radial-gradient(rgb(235, 64, 52, 0.6) 0%, transparent 50%);
+    animation: line 5s ease infinite;
+}
+
+@keyframes line {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(120px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+#rankpro_thumbnail h1{
+    position: absolute;
+    color: white;
+    font-size: 46px;
+    line-height: 48px;
+    width: 200px ;
+    left: 140px;
+    top: 10%;
+}
+
+#rank_bottom{
+    margin: 0px 60px 60px 120px;
+    border-top: 1px solid var(--white);
+    z-index: 1;
+}
+
+.rank_bottom_sub{
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: space-between;
+}
+
+.rank_bottom_sub_left{
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rank_bottom_sub_left h2{
+    font-size: 24px;
+    line-height: 28px;
+    /* font-weight: 500; */
+}
+
+.rank_bottom_sub_left h5{
+    font-size: 8px;
+    line-height: 10px;
+    font-weight: 200;
+}
+
+#rank_line_art{
+    position: absolute;
+    left: 50px;
+    bottom: 175px;
+    width: 400px;
+    color: var(--white);
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 100;
+    display: flex;
+    transform: translate(-50%, 0%) rotate(-90deg);
+    transition: all 0.2s ease;
+}
+
+#rankpro_thumbnail:hover #rank_line_art {
+    bottom: 140px;
+}
+
+#rank_line_art div{
+    width: 200px;
+    height: 1px;
+    background-color: var(--white);
+    margin-right: 10px;
+    align-self: center;
+}
+
+.rank_hamburger{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 40px;
+    height: 1px;
+    background-color: var(--white);
+    top: calc(40px + var(--i) * 6px);
+    transition: all 0.2s ease;
+}
+
+#rankpro_thumbnail:hover .rank_hamburger {
+    transform: rotate(45deg);
+}

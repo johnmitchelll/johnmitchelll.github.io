@@ -33,11 +33,11 @@
   background: transparent;
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px 20px 30px;
-  border: 0.5px solid rgb(253,251,248);
+  /* padding: 20px 40px 20px 30px; */
+  /* border: 0.5px solid rgb(253,251,248); */
   border-radius: 10px;
-  width: 75%;
-  margin: 20px;
+  width: min(75%, 1250px);
+  margin: 5% 40px;
 }
 
 
@@ -49,6 +49,10 @@
   line-height: 24px;
   font-size: 24px;
   height: fit-content;
+}
+
+#logo{
+  width: 60px;
 }
 
 
@@ -86,9 +90,9 @@
 
 #hero_wrapper{
   position: absolute;
-  top: 33%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
   width: 66%;
   display: flex;
   flex-direction: column;
@@ -102,7 +106,13 @@
 }
 
 #hero_dynamic {
-  color: #4E2F8E;
+  background: linear-gradient(135deg, rgb(78, 47, 142), rgb(235, 64, 52));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 72px;
+  height: 72px;
 }
 
 .typing_animation {
@@ -126,10 +136,11 @@
 
 .arrow {
   position: absolute;
-  bottom: 100px;
-  right: 100px;
+  bottom: 10%;
+  right: 10%;
+  transform: translate(-50%, 0%);
   cursor: pointer;
-  width:43px;
+  width: 43px;
   height: 100px;
   display: flex;
   flex-direction: column;

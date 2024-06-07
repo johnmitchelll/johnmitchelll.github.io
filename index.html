@@ -4,18 +4,24 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
   <meta name="viewport" content="user-scalable=no" />
-  <title>Mitchell Web Solutions</title>
+  <title>Johnny Mitchell</title>
 </head>
+
+<link rel="icon" href="./IMGS/icon.png" type="image/png">
 
 <link rel = "stylesheet" type = "text/css" href = "./CSS/index.css">
 
 <link rel = "stylesheet" type = "text/css" href = "./CSS/top.css">
 <link rel = "stylesheet" type = "text/css" href = "./CSS/about_me.css">
 <link rel = "stylesheet" type = "text/css" href = "./CSS/projects.css">
+<link rel = "stylesheet" type = "text/css" href = "./CSS/midthumbnails.css">
+<link rel = "stylesheet" type = "text/css" href = "./CSS/bigthumbnails.css">
 
 <!-- 'rgb(253,251,248)' white-->
 <!-- 'rgb(18,18,18)' black-->
 <!-- rgb(78, 47, 142) purple-->
+<!-- rgb(235, 64, 52) red-->
+
 
 <body>
 
@@ -26,7 +32,8 @@
       <div id="nav_bar_wrapper">
         <div id="nav_bar">
           <h2 class="head2" id="signature">JohnnyMitchell</h2>
-  
+          <!-- <img id="logo" src="./IMGS/logo.svg"> -->
+
   
           <div id="links">
             <a class="link_icon" id="email_icon" href="https://www.linkedin.com/in/john-mitchell-2042061b4/">
@@ -66,7 +73,7 @@
       <div class="grower dynamic_container" id="a_1"></div>
 
 
-      <h1 class="normal_text about_me_color_text">Learn a little</h1>
+      <h1 class="hero about_me_color_text">Learn a Little</h1>
       <h1 class="hero about_me_hero">About Me</h1>
       <h1 class="normal_text" id="about_me_body">
         I am a third year student studying Computer Science at Arizona State University looking for professional experience. Six years ago I took a robotics course that taught me basic programming skills and I immediately fell in love. Since then, I have been passionately programming small web applications.
@@ -81,60 +88,217 @@
 
 
     <div id="projects">
-      <h1 class="hero" id="projects_hero">Projects</h1>
+      <div id="projects_header_container">
+        <h3 class="hero" id="projects_hero_sub">Browse My</h3>
+        <h1 class="hero" id="projects_hero">Projects</h1>
+      </div>
+      
       
       <!-- <canvas id="projects_canvas"></canvas> -->
 
       <div id="project_thumbnails">
-        <div class="thumbnail" id="poker_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Poker</h1>
+
+        <div id="left_projects_container" class="projects_container">
+          <div class="thumbnail thumbnail_mid" id="poker_thumbnail">
+            <div id="poker_top">
+              <a>
+                <img src="./IMGS/github.svg"> 
+                <h4 class="poker_blurb" id="poker_github_blurb">hey check out this project's github</h4>
+              </a>
+              
+              <div id="poker_art_line1"></div>
+              <div id="poker_art_line2"></div>
+
+              <div id="poker_top_right">
+                <h2>Online Play</h2>
+                <h2>Poker AI</h2>
+                <h2>Live Leaderboards</h2>
+
+                <div id="poker_top_right_art">
+                  <div class="poker_art_circle" id="poker_cir1"></div>
+                  <div class="poker_art_circle" id="poker_cir2"></div>
+                  <h4 class="poker_blurb">its pretty cool tbh</h4>
+                </div>
+              </div>
+            </div>
+
+            <div id="poker_bottom">
+              <h1>Poker & Casino</h1>
+              <h4 class="poker_blurb">take a peek</h4>
+            </div>
+          </div>
+
+
+          <div class="thumbnail thumbnail_large" id="rankpro_thumbnail">
+            <div class="rank_hamburger" style="--i: 0;"></div>
+            <div class="rank_hamburger" style="--i: 1;"></div>
+            <div class="rank_hamburger" style="--i: 2;"></div>
+
+            <a> <img src="./IMGS/github.svg"> </a>
+            <div id="rank_circle_dynamic"></div>
+            <h1>Rank Pro Listings</h1>
+
+            <div id="rank_line_art">
+              <div></div>
+              RankPro is a company that will help boost companies SEO, this is the advertisement ste i made
+            </div>
+
+            <div id="rank_bottom">
+              <div class="rank_bottom_sub">
+                <div class="rank_bottom_sub_left">
+                  <h2>Web Scraping</h2>
+                  <h5>using puppeteer</h5>
+                </div>
+              </div>
+              <div class="rank_bottom_sub">
+                <div class="rank_bottom_sub_left">
+                  <h2>Extensive Backend</h2>
+                  <h5>with express</h5>
+                </div>
+              </div>
+              <div class="rank_bottom_sub">
+                <div class="rank_bottom_sub_left">
+                  <h2>Live Advertisement</h2>
+                  <h5>bringing in active business</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="thumbnail thumbnail_mid" id="wordlewizard_thumbnail">
+            <!-- <img src="./IMGS/test.jpg" class="thumbnail_img"> -->
+            <!-- <h1 class="thumbnail_header hero">Wordle Solver</h1> -->
+          </div>
+
+          <div class="thumbnail_mid_container">
+            <div class="thumbnail thumbnail_small" id="small_1"></div>
+            <div class="thumbnail thumbnail_small"></div>
+          </div>
+
+          <div class="thumbnail thumbnail_large" id="pathfinding_thumbnail">
+            <!-- <img src="./IMGS/test.jpg" class="thumbnail_img"> -->
+            <!-- <h1 class="thumbnail_header hero">Pathfinding</h1> -->
+          </div>
+
+          <div class="thumbnail thumbnail_mid">
+            <!-- <img src="./IMGS/test.jpg" class="thumbnail_img"> -->
+            <!-- <h1 class="thumbnail_header hero">Connect Four</h1> -->
+          </div>
+
         </div>
 
-        <div class="thumbnail" id="sigtau_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Sig Tau Sign Up</h1>
+
+
+        <div id="right_projects_container" class="projects_container">
+          <div class="thumbnail thumbnail_mid" id="sigtau_thumbnail">
+            <a>
+              <img src="./IMGS/github.svg"> 
+              <h4 class="stg_blurb" id="stg_github_blurb">this is the github to this project</h4>
+            </a>
+
+            <div id="stg_art_container">
+              <div id="stg_art">
+                <div class="stg_art_sub" style="--i: 0;"></div>
+                <div class="stg_art_sub" style="--i: 1;"></div>
+                <div class="stg_art_sub" style="--i: 2;"></div>
+                <div class="stg_art_sub" style="--i: 3;"></div>
+                <div class="stg_art_sub" style="--i: 4;"></div>
+                <div class="stg_art_sub" style="--i: 5;"></div>
+                <div class="stg_art_sub" style="--i: 6;"></div>
+                <div class="stg_art_sub" style="--i: 7;"></div>
+                <div class="stg_art_sub" style="--i: 7;"></div>
+                <div class="stg_art_sub" style="--i: 8;"></div>
+                <div class="stg_art_sub" style="--i: 9;"></div>
+                <div class="stg_art_sub" style="--i: 10;"></div>
+              </div>
+            </div>
+
+            <h1>Sig Tau Sign Up</h1>
+
+            <div id="stg_bottom">
+              <h3>Live Database</h3>
+              <h3>Social</h3>
+              <h3>Dynamic Content</h3>
+            </div>
+          </div>
+
+          <div class="thumbnail_mid_container">
+            <div class="thumbnail thumbnail_small" id="small_4">
+              <div class="small4_left_containter">
+                <h1 class="hero small4_hero small4_left">JavaScript HTML CSS</h1>
+              </div>
+              <div class="small4_right_containter">
+                <h1 class="hero small4_hero small4_right">C++ C Node.js WordPress</h1>
+              </div>
+              <div class="small4_left_containter">
+                <h1 class="hero small4_hero small4_left">SQL Scheme Prolog</h1>
+              </div>
+              <div class="small4_right_containter">
+                <h1 class="hero small4_hero small4_right">Python Java MongoDB</h1>
+              </div>
+              <div class="small4_left_containter">
+                <h1 class="hero small4_hero small4_left">JavaFX Puppeteer Selenium</h1>
+              </div>
+            </div>
+
+            <div class="thumbnail thumbnail_small" id="small_3">
+              <h1 class="hero">College</h1>
+
+              <div id="small3_bottom_container">
+                <div id="info_small3_container">
+                  <h2>Progress</h2>
+                  <h2 id="college_progress">50%</h2>
+                </div>
+                <div id="loading_bar">
+                  <div id="loading_bar_progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="thumbnail thumbnail_mid" id="pool_thumbnail">
+            <!-- lol -->
+            <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="pool_row last_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+            <a>
+              <img src="./IMGS/github.svg"> 
+            </a>
+
+            <div id="pool_hero">
+              <h1>8-Ball Pool with AI</h1>
+            </div>
+
+            <div id="pool_curved">
+              <div></div>
+            </div>
+
+          </div>
+
+          <div class="thumbnail thumbnail_large" id="calc_thumbnail">
+            
+          </div>
+
+          <div class="thumbnail_large_container" id="connectfour_thumbnail">
+            <!-- <img src="./IMGS/test.jpg" class="thumbnail_img"> -->
+            <!-- <h1 class="thumbnail_header hero">Connect Four</h1> -->
+            <div class="thumbnail thumbnail_mid"></div>
+            <div class="thumbnail_mid_container">
+              <div class="thumbnail thumbnail_small"></div>
+              <div class="thumbnail thumbnail_small"></div>
+            </div>
+          </div>
+
+
+          <div class="thumbnail thumbnail_mid" id="time">
+            
+          </div>
         </div>
 
-        <div class="thumbnail" id="rankpro_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">RankPro</h1>
-        </div>
-
-        <div class="thumbnail" id="calculator_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Graphing Calculator</h1>
-        </div>
-
-        <div class="thumbnail" id="wordlewizard_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Wordle Solver</h1>
-        </div>
-
-        <div class="thumbnail" id="pool_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Pool</h1>
-        </div>
-
-        <div class="thumbnail" id="flappybird_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Flappy Bird</h1>
-        </div>
-
-        <div class="thumbnail" id="pathfinding_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Pathfinding</h1>
-        </div>
-
-        <div class="thumbnail" id="connectfour_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">Connect Four</h1>
-        </div>
-
-        <div class="thumbnail" id="idk_thumbnail">
-          <img src="./IMGS/test.jpg" class="thumbnail_img">
-          <h1 class="thumbnail_header hero">HELLO</h1>
-        </div>
       </div>
 
       <h2 class="head2" id="projects_signature">JohnnyMitchell</h2>
@@ -148,13 +312,10 @@
   <script src="Perlin_JS/Particle.js"></script>
   <script src="Perlin_JS/perlin.js"></script>
 
-  <script src="JS/Main.js"></script>
   <script src="JS/HTML.js"></script>
   <script src="JS/About_Me.js"></script>
-
-  <!-- <script src="Projects_Art/Main.js"></script>
-  <script src="Projects_Art/Graphics.js"></script>
-  <script src="Projects_Art/Class.js"></script> -->
+  <!-- <script src="JS/Art1.js"></script> -->
+  <script src="JS/Main.js"></script>
 
 </body>
 </hmtl>

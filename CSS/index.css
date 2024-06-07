@@ -8,6 +8,15 @@
   cursor: pointer;
 }
 
+:root{
+  --white: rgb(253,251,248);
+  --black: rgb(18,18,18);
+  --purple: rgb(78, 47, 142);
+  --red: rgb(235, 64, 52);
+  --grey: rgb(30,30,30);
+  --lightgrey: rgba(255,255,255, 0.5);
+}
+
 body {
   background-color: rgb(18,18,18);
 }

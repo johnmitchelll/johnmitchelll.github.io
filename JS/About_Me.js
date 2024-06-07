@@ -1,9 +1,14 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-  setInterval(updateDynamicScrollers, 1000/10);
+  setInterval(() => {
+    updateDynamicScrollers();
+    // art1.draw();
+  }, 1000/30);
+
+  // setTimeout(art1.createNewShootingStar, 1000);
 });
 
-var activeAreaGap = 150;
+var activeAreaGap = window.innerHeight/2-150;
 var dynamicSliders = document.querySelectorAll("#about_me .dynamic_container");
 
 var prevInOrOut = new Array(dynamicSliders.length);
@@ -50,9 +55,9 @@ function animateHalf(inScreen, div, index){
   if(prevInOrOut[index] == 1){
     div.style.animationPlayState = "running";
 
-  div.addEventListener("animationiteration", () => {
-    prevInOrOut[index] = 0;
-    div.style.animationPlayState = "paused";
-  });
+    div.addEventListener("animationiteration", () => {
+      prevInOrOut[index] = 0;
+      div.style.animationPlayState = "paused";
+    });
   }
 }

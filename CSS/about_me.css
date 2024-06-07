@@ -1,10 +1,16 @@
 #about_me{
-  padding: 25vh 10vw 33vh 10vw;
+  padding: 33vh 10vw 33vh 10vw;
+  max-width: 1170px;
+  align-self: center;
 }
 
 .about_me_color_text{
   color: rgb(78, 47, 142);
   margin-bottom: 20px;
+  width: fit-content;
+  font-size: 25px;
+  line-height: 38px;
+  font-weight: 500;
 }
 
 .about_me_hero{

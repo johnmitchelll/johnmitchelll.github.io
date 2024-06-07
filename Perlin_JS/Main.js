@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	canvas = document.getElementById('flow_canvas');
 	canvasContext = canvas.getContext('2d');
 
-
-    // colorRect(0,0,canvas.width,canvas.height,'rgb(253,251,248)');
-
 	start();
 
     // drawFlowGrid();

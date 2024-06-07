@@ -8,6 +8,7 @@ var flowFeild;
 var timer = 1000;
 var respawnNum = 1;
 
+
 var prevWindowDimentions = {width:0, height:0};
 
 function drawEverything (){
@@ -26,10 +27,18 @@ function drawEverything (){
       particles[i].follow(flowFeild);
       particles[i].update();
       particles[i].edges();
-      particles[i].show();
+
+      if(i < particles.length/2){
+        particles[i].show();
+      }else{
+        particles[i].show(true);
+      }
     }
 
     canvasAlign();
+
+    // var style = getComputedStyle(document.body)
+    // console.log( style.getPropertyValue('--small4-width') )
 }
 
 
@@ -80,6 +89,8 @@ function canvasAlign(){
     }, 30000);
 
   colorRect(0, 0, canvas.width, canvas.height, "rgb(18,18,18)");
+
+  document.documentElement.style.setProperty('--small4-width', document.getElementById("small_4").offsetWidth + "px");
 
   start();
 }

@@ -1,0 +1,281 @@
+/* poker */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#poker_thumbnail{
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: rgb(18,18,18);
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    font-family: header_font;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.poker_blurb{
+    font-size: 5px;
+    font-weight: 10;
+}
+
+#poker_top{
+    display: flex;
+    justify-content: space-between;
+}
+
+#poker_top a{
+    display: flex;
+}
+
+#poker_top a img{
+    margin: 15px 15px 0px 30px;
+    width: 50px;
+    height: 50px;
+}
+
+#poker_github_blurb{
+    width: 50px;
+    margin-top: 25px;
+}
+
+
+#poker_art_line1{
+    position: absolute;
+    top: 30px;
+    left: 45%;
+    width: 25px;
+    height: 0.5px;
+    background-color: var(--white);
+    transition: all 0.2s ease;
+}
+
+#poker_art_line2{
+    position: absolute;
+    top: 36px;
+    left: 45%;
+    width: 25px;
+    height: 0.5px;
+    background-color: var(--white);
+    transition: all 0.2s ease;
+}
+
+#poker_thumbnail:hover #poker_art_line1{
+    transform: rotate(-45deg);
+}
+
+#poker_thumbnail:hover #poker_art_line2{
+    transform: rotate(45deg);
+}
+
+
+#poker_top_right{
+    margin: 20px 40px;
+}
+
+
+#poker_top_right_art{
+    margin-top: 10px;
+    display: flex;
+}
+
+.poker_art_circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+#poker_cir1{
+    background-color: var(--red);
+    transition: all 0.2s ease;
+}
+
+#poker_cir2{
+    background-color: var(--purple);
+    transition: all 0.2s ease;
+}
+
+#poker_thumbnail:hover #poker_cir1{
+    background-color: var(--purple);
+}
+
+#poker_thumbnail:hover #poker_cir2{
+    background-color: var(--red);
+}
+
+#poker_top_right_art h4{
+    margin-left: 10px;
+}
+
+#poker_bottom{
+    margin: 0px 0px 20px 30px;
+    position: absolute;
+    top: 40%;
+    width: 40%;
+}
+
+#poker_bottom h1{
+    margin-bottom: 10px;
+    font-size: 46px;
+    line-height: 48px;
+}
+
+/* stg sign up */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#sigtau_thumbnail{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    font-family: header_font;
+    justify-content: space-between;
+    position: relative;
+}
+
+#sigtau_thumbnail a{
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(871%) hue-rotate(342deg) brightness(96%) contrast(86%);
+}
+
+#stg_github_blurb{
+    width: 60px;
+}
+
+.stg_blurb{
+    font-size: 5px;
+    line-height: 10px;
+}
+
+#sigtau_thumbnail h1{
+    margin: 20px 0px 0px 0px;
+    align-self: end;
+    font-size: 46px;
+    line-height: 48px;
+    width: 40%;
+}
+
+#stg_bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 0px 40px;
+}
+
+#stg_bottom h3{
+    color: var(--white);
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+#sigtau_thumbnail:hover #stg_bottom h3{
+    font-weight: 1000;
+    padding: 15px 20px;
+}
+
+#stg_art_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#stg_art{
+    position: relative;
+    width: 1px;
+    height: 1px;
+    left: 40%;
+    top: -10px;
+}
+
+.stg_art_sub{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--black);
+    top: 10%;
+    left: 10%;
+    transform-origin: center;
+    animation: rotate 10s linear infinite;
+    animation-delay: calc(var(--i) * -1s);
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translateX(50px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px);
+    }
+}
+
+/* pool */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+#pool_thumbnail{
+    background-color: var(--black);
+    border: 1px solid var(--lightgrey);
+    display: flex;
+    flex-direction: column;
+    font-family: header_font;
+    position: relative;
+}
+
+.pool_row{
+    height: 40.833333px;
+    width: 100%;
+    border-bottom: 1px solid var(--grey);
+    display: flex;
+}
+
+.last_row{
+    border-bottom: 1px solid transparent;
+}
+
+.pool_row div{
+    width: calc(100% / 7);
+    height: 100%;
+    border: 1px solid var(--purple);
+}
+
+#pool_hero h1{
+    color: white;
+    font-size: 46px;
+    line-height: 48px;
+    width: calc(300% / 7 - 22px);
+    height: calc(40.9px * 3 - 22px);
+    position: absolute;
+    left: calc(100% / 7 + 1px);
+    top: 42px;
+    background-color: var(--black);
+    padding: 10px;
+}
+
+#pool_thumbnail a {
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+
+#pool_curved{
+    width: calc(200% / 7 - 2px);
+    height: calc(40px);
+    position: absolute;
+    left: calc(300% / 7 + 1px);
+    top: calc(42px * 4 - 4px);
+    background-color: var(--black);
+}
+
+#pool_curved div{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+    border-radius: 0px 0px 0px 0px;
+}
