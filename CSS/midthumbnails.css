@@ -242,6 +242,7 @@
     width: calc(100% / 7);
     height: 100%;
     border: 1px solid var(--purple);
+    background-color: var(--black);
 }
 
 #pool_hero h1{
@@ -265,7 +266,7 @@
 
 #pool_curved{
     width: calc(200% / 7 - 2px);
-    height: calc(40px);
+    height: 40px;
     position: absolute;
     left: calc(300% / 7 + 1px);
     top: calc(42px * 4 - 4px);
@@ -277,5 +278,161 @@
     height: 100%;
     border-bottom: 1px solid var(--white);
     border-right: 1px solid var(--white);
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.pool_description{
+    color: var(--white);
+    position: absolute;
+    width: calc(300% / 7 - 2px);
+    height: 39.9px;
+    left: calc(400% / 7 + 1px);
+    top: calc((42px - 0.5px) * var(--i));
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.pool_description h3{
+    align-self: center;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* wordle wizard */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+#wordlewizard_thumbnail{
+    background-color: var(--white);
+    display: flex;
+    position: relative;
+    font-family: header_font;
+    justify-content: end;
+}
+
+#wordlewizard_thumbnail a{
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(871%) hue-rotate(342deg) brightness(96%) contrast(86%);
+    display: flex;
+}
+
+#wordlewizard_thumbnail a h4{
+    font-size: 5px;
+    /* line-height: 10px; */
+    align-self: center;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.ww_sub{
+    /* width: 50%; */
+    /* height: 100%; */
+    display: flex;
+}
+
+#ww_left{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0px 0 15px 30px;
+    bottom: 0%;
+    left: 0%;
+}
+
+#ww_left h2{
+    font-size: 46px;
+    line-height: 48px;
+}
+
+#ww_left h4{
+    font-size: 46px;
+    line-height: 48px;
+}
+
+
+#ww_right{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    justify-content: space-between;
+}
+
+#ww_right h3{
+    /* align-self: end; */
+    padding: 10px 20px;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    text-align: center;
+    /* margin-bottom: 15px; */
+}
+
+.ww_line_art{
+    position: absolute;
+    width: 300px;
+    height: 2px;
+    background-color: var(--black);
+    transform: rotate(45deg);
+}
+
+
+
+#ww_line_art1{
+    animation: ww_line_move1 6s linear infinite;
+}
+
+@keyframes ww_line_move1 {
+    0% {
+        left: -1900px;
+        top: -2200px;
+    }
+    100% {
+        left: 2000px;
+        top: 1700px;
+    }
+}
+
+#ww_line_art2{
+    animation: ww_line_move2 4s linear infinite;
+}
+
+@keyframes ww_line_move2 {
+    0% {
+        left: -1600px;
+        top: -1700px;
+    }
+    100% {
+        left: 1700px;
+        top: 1600px;
+    }
+}
+
+/* long */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#long_thumbnail{
+    background-color: var(--white);
+}
+
+
+/* connect four */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+#connect_four_thumbnail{
+    background-color: var(--purple);
+}
+
+/* time four */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+#time{
+    background-color: var(--red);
 }

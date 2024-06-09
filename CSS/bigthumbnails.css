@@ -122,3 +122,19 @@
 #rankpro_thumbnail:hover .rank_hamburger {
     transform: rotate(45deg);
 }
+
+/* Calculator */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#calc_thumbnail{
+    background-color: var(--purple);
+    /* background: linear-gradient(135deg, var(--purple), var(--red)); */
+}
+
+/* Pathfinding */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#pathfinding_thumbnail{
+    background-color: var(--black);
+    border: 1px solid var(--lightgrey);
+}
