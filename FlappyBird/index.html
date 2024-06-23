@@ -3,117 +3,65 @@
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
-  <title>Flappy Bird w/ NEAT</title>
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
 </head>
 
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
 <link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./flappybird.css">
 
-<style>
-
-*{
-  background-color: rgb(18,18,18);
-  margin: 0;
-}
-
-#top_container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#github_link{
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-}
-
-#hero_title{
-  color: rgb(253,251,248);
-  align-self: center;
-  margin: 20px;
-}
-
-#bottom_container{
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  justify-content: center;
-}
-
-#gameCanvas{
-  align-self: center;
-  border-radius: 10px;
-  /* box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.05); */
-  width: min(60vw, 60vh);
-  height: min(60vw, 60vh);
-  margin: 20px;
-}
-
-#info_text{
-  background-color: transparent;
-  font-family: normal_font;
-  line-height: 25px;
-  font-size: 20px;
-  height: fit-content;
-  color: rgb(253,251,248);
-  width: 85vw;
-  align-self: center;
-  margin: 40px 0px;
-}
-
-.radio{
-  background-color: transparent;
-  font-family: normal_font;
-  line-height: 20px;
-  font-size: 16px;
-  height: fit-content;
-  color: rgb(253,251,248);
-  align-self: center;
-  text-align: center;
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid rgb(253,251,248);
-  border-radius: 5px;
-}
-
-#input_container{
-  align-self: center;
-  display: flex;
-}
-
-</style>
 
 <body>
-  <!-- <div id="top_container"> -->
-    <h1 class="hero" id="hero_title">Flappy Bird AI Using N.E.A.T.</h1>
-  <!-- </div> -->
+    <div id="container">
 
-  <div id="bottom_container">
-    <canvas id="gameCanvas" width="600" height="600"></canvas>
+      <div id="back_arrow_container" onclick="goTo('../index.html')">
+        <h2>←</h2>
+      </div>
 
-    <div id="input_container">
-      <button class="radio" onclick="toggleBrain()" id="bestBrain">Show Best Brain</button>
-      
-      <button class="radio" onclick="toggleData()" id="stats">Show Stats</button>
+      <div id="top_container">
+        <h1>Flappy Bird AI Using NEAT</h1>
+        <a><img src="../IMGS/github.svg"></a>
+      </div>
 
-      <button class="radio" onclick="toggleBirds()" id="birds">Show All Birds</button>
-  </div>
+      <div id="mid_container">
+        <p>This is my neural network I built from scratch in vanilla JavaScript. You can watch the birds getting better and 
+            better as they learn how to fly through the pipes. The "learning" comes from the genetic algorithm under the hood. 
+            More specificly this project uses NEAT (Neural Evolution of Augmenting Topologies).<br><br>
 
+            We take an initial population of birds with completely randomized brains and let them out into the world. Majority 
+            of the time these birds are very dumb. After all the birds have crashed, we take the best birds brain and duplicate 
+            it into the other birds before mutating it slightly. This will ensure that through random evolution the birds will 
+            get better overtime.<br><br>
 
-  <a class="link_icon" id="github_link" href="https://github.com/johnmitchelll/Flappy-Bird-AI">
-    <img src="../IMGS/github.svg" alt="GitHub">
-  </a>   
+            Each one of these bird's brains take in three bits of information and can make one decision: to jump, or not jump.
+            They can see the horizontal distance to the next pole (green) and the vertical height to the top and bottom of the 
+            next pole (blue and red). This works well with something as simple as Flappy Bird because of the minimal complexity. 
+            This is one of the most simple versions of what people consider AI today and is a great visualization as to what 
+            simulated integligence is.
+        </p>
+      </div>
 
-<script src="js/Main.js"></script>
-<script src="js/Brain.js"></script>
-<script src="js/Class.js"></script>
-<script src="js/Graphics.js"></script>
+      <div id="bottom_container">
+        <button onclick="goTo('./project/index.html')">Check this Project Out</button>
 
+        <div>
+          <div id="bottom_img_backdrop"></div>
+          <div id="bottom_img_container">
+            <img src="./IMGS/flappy1.png" class="display_image">
+            <img src="./IMGS/flappy2.png">
+            <img src="./IMGS/flappy3.png">
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <script src="../JS/Class.js"></script>
 
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
 </body>
 </hmtl>
-
-
-
-

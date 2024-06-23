@@ -1,39 +1,32 @@
-var canvas;
-var canvasContext;
+var perlinCanvas = new DrawableSurface('flow_canvas');
 
 var perlinInterval;
+var perlinRefreshTimer;
 
-document.addEventListener('DOMContentLoaded', function() {
-	canvas = document.getElementById('flow_canvas');
-	canvasContext = canvas.getContext('2d');
+var SCALE = 4;
+var cols, rows;
+var particles = new Array(100);
 
-	start();
+var flowFeild;
 
-    // drawFlowGrid();
+var timer = 1000;
+var respawnNum = 1;
 
-	var framesPerSecond = 60;
-	perlinInterval = setInterval(function(){drawEverything();},1000/framesPerSecond);
-    setInterval(function(){canvasAlign();},1000/10);
-
-    setTimeout(() => {
-        clearInterval(perlinInterval);
-    }, 30000);
-});
+var prevWindowDimentions = {width:0, height:0};
 
 
-function start(){
-
+function startPerlin(){
     prevWindowDimentions.width = window.innerWidth;
 	prevWindowDimentions.height = window.innerHeight;
 
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
+    perlinCanvas.canvas.style.width = window.innerWidth + "px";
+    perlinCanvas.canvas.style.height = window.innerHeight + "px";
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    perlinCanvas.canvas.width = window.innerWidth;
+    perlinCanvas.canvas.height = window.innerHeight;
 
-    cols = Math.ceil(canvas.width / SCALE)+2;
-    rows = Math.ceil(canvas.height / SCALE)+2;
+    cols = Math.ceil(perlinCanvas.canvas.width / SCALE)+2;
+    rows = Math.ceil(perlinCanvas.canvas.height / SCALE)+2;
 
     flowFeild = new Array(cols * rows);
 
@@ -44,18 +37,29 @@ function start(){
 
         for (var i = 0; i < cols; i++) {
 
-            xOff += 0.03;
+            xOff += 0.028;
             var index = j * cols + i;
             var angle = (0.5 + perlin.get(xOff, yOff)) * 2*Math.PI;
             flowFeild[index] = angle;
         }
 
-        yOff += 0.027;
+        yOff += 0.028;
     }
 
     for (var i = 0; i < particles.length; i++) {
         particles[i] = new Particle();
     }
+
+
+    var framesPerSecond = 60;
+	perlinInterval = setInterval(function(){drawEverything();},1000/framesPerSecond);
+    setInterval(function(){canvasAlign();},1000/10);
+
+    perlinRefreshTimer = setTimeout(() => {
+        clearInterval(perlinInterval);
+        // perlinRefreshTimer = undefined;
+        // perlinInterval = undefined;
+    }, 20000);
 }
 
 

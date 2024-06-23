@@ -190,17 +190,120 @@
 
 #small_1{
   display: flex;
-  background-color: var(--purple);
+  background-color: var(--red);
   /* border: 1px solid var(--lightgrey); */
   transition: all 0.3s ease;
+  font-family: header_font;
+  display: flex;
+  flex-direction: column;
+  color: var(--black);
 }
+
+#small1_blurb_top{
+  display: flex;
+  justify-content: space-around;
+}
+
+#small1_blurb_top h5{
+  font-size: 8px;
+  line-height: 10px;
+  padding: 5px 0px 10px 0px;
+  font-weight: 200;
+}
+
+#small_1 h1{
+  font-size: 46px;
+  line-height: 48px;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  /* font-weight: 1000; */
+  transition: all 0.2s ease;
+}
+
+#small_1:hover h1{
+  font-weight: 400;
+}
+
+.small1_bottom_sub{
+  width: 50%;
+  flex: 1;
+  border-left: 1px solid var(--black);
+  align-self: end;
+  position: relative;
+}
+
+#small1_bottom_about{
+  width: calc(50% - 5px);
+  /* border-bottom: 1px solid var(--black); */
+  font-size: 8px;
+  line-height: 10px;
+  font-weight: 200;
+  padding: 5px 0px 0px 5px;
+}
+
+#small1_bottom_about::after {
+  content: '';
+  position: absolute;
+  left: -50%;
+  bottom: 0px;
+  width: calc(150%);
+  border-bottom: 1px solid var(--black);
+}
+
+#small1_age{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#small1_age h3{
+  font-size: 36px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+#small_1:hover #small1_age h3{
+  font-weight: 1000;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 #small_2{
   display: flex;
-  background-color: var(--red);
+  background-color: var(--black);
+  border: 1px solid var(--lightgrey);
   transition: all 0.3s ease;
+  flex-direction: column;
+  font-family: header_font;
+  width: calc(50% - 7px);
+  height: 243px;
 }
 
+#small_2 h3{
+  margin-left: 10px;
+  font-size: 29px;
+  line-height: 49px;
+  text-wrap: nowrap;
+  transition: all 0.2s ease;
+}
+
+.small2_list_soft{
+  color: rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+}
+
+.small2_list_strong{
+  color: var(--white);
+  font-weight: 800;
+}
+
+#small_2:hover .small2_list_soft{
+  font-weight: 200;
+}
 
 /* url(https://grainy-gradients.vercel.app/noise.svg) */
 
@@ -373,10 +476,79 @@
 #small_5{
   background-color: var(--black);
   border: 1px solid var(--lightgrey);
+  position: relative;
+}
+
+#small_5 a{
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  z-index: 2;
+}
+
+#small5_color{
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 22px);
+  background-color: var(--purple);
+  z-index: 0;
+}
+
+.small5_star{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  border-radius: 30px;
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+#small_5:hover .small5_star{
+  border-radius: 40px;
+}
+
+#small5_star_1{
+  right: 55px;
+  bottom: calc(100% - 110px);
+}
+
+#small5_star_2{
+  left: calc(100% - 55px);
+  bottom: calc(100% - 110px);
+}
+
+#small5_star_3{
+  left: calc(100% - 55px);
+  top: 110px;
+}
+
+#small5_star_4{
+  right: 55px;
+  top: 110px;
+}
+
+#small_5 h1{
+  font-family: header_font;
+  position: absolute;
+  color: white;
+  z-index: 2;
+  right: 30px;
+  bottom: 30px;
+  font-size: 24px;
+  line-height: 28px;
+  width: 75%;
+  text-align: end;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 #small_6{
   background-color: var(--purple);
+} 
+
+#night_sky{
+  width: 100%;
 }

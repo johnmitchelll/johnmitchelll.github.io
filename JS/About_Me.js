@@ -1,13 +1,3 @@
-
-document.addEventListener('DOMContentLoaded', function() {
-  setInterval(() => {
-    updateDynamicScrollers();
-    // art1.draw();
-  }, 1000/30);
-
-  // setTimeout(art1.createNewShootingStar, 1000);
-});
-
 var activeAreaGap = window.innerHeight/2-150;
 var dynamicSliders = document.querySelectorAll("#about_me .dynamic_container");
 

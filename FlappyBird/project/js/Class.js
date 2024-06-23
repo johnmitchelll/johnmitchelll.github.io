@@ -17,9 +17,9 @@ function moveWalls(){
 
   wall_speed += 0.01;
 
-  if(wall_speed > 7){
-    wall_speed = 7;
-  }
+  // if(wall_speed > 7){
+  //   wall_speed = 7;
+  // }
 
   if(population.allDead == false){
     walls[0].x -= wall_speed;

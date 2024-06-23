@@ -17,6 +17,8 @@
 <link rel = "stylesheet" type = "text/css" href = "./CSS/midthumbnails.css">
 <link rel = "stylesheet" type = "text/css" href = "./CSS/bigthumbnails.css">
 
+
+
 <!-- 'rgb(253,251,248)' white-->
 <!-- 'rgb(18,18,18)' black-->
 <!-- rgb(78, 47, 142) purple-->
@@ -24,8 +26,19 @@
 
 
 <body>
-
   <div id="container">
+
+    <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+      <filter id='noiseFilter'>
+        <feTurbulence 
+          type='fractalNoise' 
+          baseFrequency='10' 
+          numOctaves='3' 
+          stitchTiles='stitch'/>
+      </filter>
+      
+      <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+    </svg>
   
     <div id="top_wrapper">
 
@@ -57,6 +70,7 @@
         <h1 class="hero" id="hero_name">Johnny Mitchell</h1>
 
         <h1 class="hero typing_animation" id="hero_dynamic"></h1>
+        
       </div>
 
       <div class="arrow">
@@ -187,18 +201,89 @@
           </div>
 
           <div class="thumbnail_mid_container">
-            <div class="thumbnail thumbnail_small" id="small_1"></div>
-            <div class="thumbnail thumbnail_small" id="small_2"></div>
+            <div class="thumbnail thumbnail_small" id="small_1">
+              <div id="small1_blurb_top">
+                <h5>JMM</h5>
+                <h5>Designer</h5>
+                <h5>Programmer</h5>
+              </div>
+
+              <h1>J. Mitchell</h1>
+
+              <div class="small1_bottom_sub" id="small1_bottom_about">
+                When I was young I would watch my step-brother Drew code in Java and I felt the strongest attraction to something in my life.
+                To this day I still programming as one of the coolest things you can learn to do.
+              </div>
+              <div class="small1_bottom_sub" id="small1_age">
+                <h3>21 Yrs.</h3>
+              </div>
+            </div>
+
+            <div class="thumbnail thumbnail_small" id="small_2">
+              <h3 class="small2_list_strong">1. Hard Working</h3>
+              <h3 class="small2_list_soft">2. Self Taught</h3>
+              <h3 class="small2_list_soft">3. Eager for Work</h3>
+              <h3 class="small2_list_soft">4. Full Stack</h3>
+              <h3 class="small2_list_soft">5. Highly Motivated</h3>
+            </div>
           </div>
 
           <div class="thumbnail thumbnail_large" id="pathfinding_thumbnail">
-            <!-- <img src="./IMGS/test.jpg" class="thumbnail_img"> -->
-            <!-- <h1 class="thumbnail_header hero">Pathfinding</h1> -->
+            <div id="pf_mid_line"></div>
+
+            <a> <img src="./IMGS/github.svg"> </a>
+
+            <div class="pf_art_sub" style="--j: 0;"></div>
+            <div class="pf_art_sub" style="--j: 1;"></div>
+            <div class="pf_art_sub" style="--j: 2;"></div>
+            <div class="pf_art_sub" style="--j: 3;"></div>
+            <div class="pf_art_sub" style="--j: 4;"></div>
+            <div class="pf_art_sub" style="--j: 5;"></div>
+
+            <h1>Pathfinding Hands-on</h1>
+
+
+            <div id="pf_button_container">
+              <div class="pf_button">
+                <h3>Dynamic</h3>
+              </div>
+              <div class="pf_button">
+                <h3>Algorithms</h3>
+              </div>
+              <div class="pf_button">
+                <h3>Interactive</h3>
+              </div>
+            </div>
+
+            <h5 id="pf_left_blurb">This is one of the first projects I ever made and I still love how it looks</h5>
+
+            <div id="pf_box">
+              <div id="pf_box_cir"></div>
+              <h5 id="pf_top_blurb">Gives you an</h5>
+              <h5 id="pf_right_blurb">idea on how map apps work on the inside</h5>
+          
+            </div>
           </div>
 
           <div class="thumbnail thumbnail_mid" id="connect_four_thumbnail">
-            <!-- <img src="./IMGS/test.jpg" class="thumbnail_img"> -->
-            <!-- <h1 class="thumbnail_header hero">Connect Four</h1> -->
+            <a> <img src="./IMGS/github.svg"> </a>
+
+            <div id="cf_info_container">
+              <h2>Minimax</h2>
+              <h2>Algorithm</h2>
+            </div>
+
+            <h1>Connect Four AI</h1>
+
+            <div id="cf_cir_container">
+              <div id="cf_cir1"></div>
+              <div id="cf_cir2"></div>
+              <div id="cf_cir3"></div>
+            </div>
+
+            <div class="cf_line_art" style="--e: 1;"></div>
+            <div class="cf_line_art" style="--e: 2;"></div>
+            <div class="cf_line_art" style="--e: 3;"></div>
           </div>
 
         </div>
@@ -289,9 +374,8 @@
               <h1>8-Ball Pool with AI</h1>
             </div>
 
-            <!-- <div id="pool_curved">
-              <div></div>
-            </div> -->
+            <div class="pool_line_art" style="--j: -90"></div>
+            <div class="pool_line_art" style="--j: 90"></div>
 
             <div class="pool_description" style="--i: 2.975">
               <h3>User-friendly</h3>
@@ -304,20 +388,76 @@
           </div>
 
           <div class="thumbnail thumbnail_large" id="calc_thumbnail">
-            
+            <a><img src="./IMGS/github.svg"> </a>
+            <h4>Great for Calculus 1 and 2, I would use it when I needed a quick visualization for a problem</h4>
+
+            <h1 id="calc_hero">Graphing Calculator</h1>
+
+            <div id="calc_bottom">
+              <div id="calc_bottom_art">
+                <canvas id="calc_bottom_art_canvas"></canvas>
+              </div>
+
+              <div id="calc_bottom_description">
+                <h3>Integration</h3>
+                <h3>Derivation</h3>
+                <h3>Graph Series</h3>
+              </div>
+
+              <div id="calc_bottom_blurb">
+                <div class="calc_bottom_blurb_square" style="--i: 0;"></div>
+                <div class="calc_bottom_blurb_square" style="--i: 1;"></div>
+                <div class="calc_bottom_blurb_square" style="--i: 2;"></div>
+
+                <h3>Calculus</h3>
+
+                <div id="calc_bottom_blurb_line"></div>
+              </div>
+            </div>
           </div>
 
           <div class="thumbnail_large_container">
-            <div class="thumbnail thumbnail_mid" id="long_thumbnail"></div>
+            <div class="thumbnail thumbnail_mid" id="long_thumbnail" onclick="goTo('FlappyBird/index.html')">
+              <a> <img src="./IMGS/github.svg"> </a>
+
+              <h1>Flappy Bird AI Using NEAT</h1>
+
+              <div id="long_info_container">
+                <h2>Neural Network</h2>
+                <h2>Vanilla JS</h2>
+                <!-- <h2>Genetic Algorithm</h2> -->
+              </div>
+
+              <div id="long_cir_container">
+                <div></div>
+                <h4>This one is super cool</h4>
+              </div>
+            </div>
+            
             <div class="thumbnail_mid_container">
-              <div class="thumbnail thumbnail_small" id="small_5"></div>
-              <div class="thumbnail thumbnail_small" id="small_6"></div>
+              <div class="thumbnail thumbnail_small" id="small_5">
+                <a><img src="./IMGS/github.svg"> </a>
+                <div class="small5_star" id="small5_star_1"></div>
+                <div class="small5_star" id="small5_star_2"></div>
+                <div class="small5_star" id="small5_star_3"></div>
+                <div class="small5_star" id="small5_star_4"></div>
+                <div id="small5_color"></div>
+
+                <h1>Small Projects & Games</h1>
+              </div>
+              <div class="thumbnail thumbnail_small" id="small_6">
+                <canvas id="night_sky"></canvas>
+              </div>
             </div>
           </div>
 
 
           <div class="thumbnail thumbnail_mid" id="time">
-            
+            <h2>Passionately Programming For:</h2>
+            <h1>00:00:00:00:00:00</h1>
+            <h5 id="time_blurb_left" class="time_blurb" >From Feb 2, 2018</h5>
+            <h5 id="time_blurb_right" class="time_blurb" >Through Today</h5>
+            <h5></h5>
           </div>
         </div>
 
@@ -329,15 +469,18 @@
   </div>
 
 
-  <script src="Perlin_JS/Main.js"></script>
-  <script src="Perlin_JS/Graphics.js"></script>
-  <script src="Perlin_JS/Particle.js"></script>
-  <script src="Perlin_JS/perlin.js"></script>
-
-  <script src="JS/HTML.js"></script>
+  <script src="JS/Class.js"></script>
+  <script src="JS/Night_Sky.js"></script>
+  <script src="JS/Typing.js"></script>
   <script src="JS/About_Me.js"></script>
-  <!-- <script src="JS/Art1.js"></script> -->
+  <script src="JS/Grid.js"></script>
+  <script src="JS/Time.js"></script>
   <script src="JS/Main.js"></script>
+
+  <script src="JS/Perlin_JS/Main.js"></script>
+  <script src="JS/Perlin_JS/Graphics.js"></script>
+  <script src="JS/Perlin_JS/Particle.js"></script>
+  <script src="JS/Perlin_JS/perlin.js"></script>
 
 </body>
 </hmtl>

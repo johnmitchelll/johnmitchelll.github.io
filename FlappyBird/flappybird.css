@@ -1,0 +1,12 @@
+#container {
+    color: var(--black);
+}
+
+#top_container a{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(871%) hue-rotate(342deg) brightness(96%) contrast(86%);
+}
+
+#bottom_container button{
+    background-color: transparent;
+    border: 2px solid var(--black);
+}

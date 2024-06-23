@@ -6,14 +6,13 @@ var gDir = 1;
 var bDir = 1;
 var dirMag = 0.2;
 
-
 function Particle() {
 
   this.mag = 1 + Math.random() * 1;
   this.angle = 0;
 
-  this.posX = Math.random()*canvas.width;
-  this.posY = Math.random()*canvas.height;
+  this.posX = Math.random()*perlinCanvas.canvas.width;
+  this.posY = Math.random()*perlinCanvas.canvas.height;
 
   this.update = function() {
     this.posX += Math.cos(this.angle);
@@ -21,38 +20,27 @@ function Particle() {
   }
 
   this.randomize = function(){
-    this.posX = Math.random()*canvas.width;
-    this.posY = Math.random()*canvas.height;
+    this.posX = Math.random()*perlinCanvas.canvas.width;
+    this.posY = Math.random()*perlinCanvas.canvas.height;
   }
 
-
-
   this.show = function(color) {
-
-    
-    // b += bDir;
-    // if (b > 255) {
-    //   bDir = -dirMag;
-    // }else if(b < 220){
-    //   bDir = dirMag;
-    // }
-
     if(color){
-      colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.3+'')
+      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.2+'')
     }else{
-      colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.05)')
+      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.05)')
     }
     
   }
 
   this.edges = function() {
-    if (this.posX > canvas.width+10) {
+    if (this.posX > perlinCanvas.canvas.width+10) {
       this.pickRandomSide();
     }
     if (this.posX < -10) {
       this.pickRandomSide();
     }
-    if (this.posY > canvas.height+10) {
+    if (this.posY > perlinCanvas.canvas.height+10) {
       this.pickRandomSide();
     }
     if (this.posY < -10) {
@@ -64,16 +52,16 @@ function Particle() {
     let seed = Math.random();
     if(seed<0.25){
       this.posX = -10;
-      this.posY = Math.random() * canvas.height;
+      this.posY = Math.random() * perlinCanvas.canvas.height;
     }else if(seed>=0.25 && seed<0.5){
-      this.posX = canvas.width + 10;
-      this.posY = Math.random() * canvas.height;
+      this.posX = perlinCanvas.canvas.width + 10;
+      this.posY = Math.random() * perlinCanvas.canvas.height;
     }else if(seed>=0.5 && seed<0.75){
       this.posY = -10;
-      this.posX = Math.random() * canvas.width;
+      this.posX = Math.random() * perlinCanvas.canvas.width;
     }else{
-      this.posY = canvas.height + 10;
-      this.posX = Math.random() * canvas.width;
+      this.posY = perlinCanvas.canvas.height + 10;
+      this.posX = Math.random() * perlinCanvas.canvas.width;
     }
   }
 

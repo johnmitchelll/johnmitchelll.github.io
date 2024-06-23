@@ -2,9 +2,16 @@
 * {
   margin: 0px;
   padding: 0px;
+  
 }
 
+
+
 * button{
+  cursor: pointer;
+}
+
+* a{
   cursor: pointer;
 }
 
@@ -32,11 +39,6 @@ body {
 }
 
 @font-face {
-  font-family: italic_font;
-  src: url('../Fonts/italic_font.ttf');
-}
-
-@font-face {
   font-family: signature_font;
   src: url('../Fonts/signature.ttf');
 }
@@ -45,9 +47,27 @@ html {
   overflow-x: hidden;
 }
 
+#grainy_overlay{
+  opacity: 10%;
+  filter: brightness(70%);
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+}
+
 #container{
   display: flex;
   flex-direction: column;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 .hero{
@@ -66,21 +86,4 @@ html {
   font-size: 25px;
   line-height: 38px;
   height: fit-content;
-}
-
-
-@keyframes inertiaAnimation {
-  to {
-    transform: rotateY(1turn);
-  }
-}
-
-.inertia {
-  animation-name: inertiaAnimation;
-  animation-timeline: view();
-} 
-
-
-#projects{
-  height: 100vh;
 }

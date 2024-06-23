@@ -4,9 +4,9 @@ var walls = new Array(3);
 var display = 0;
 var dir = 0;
 
-var showAllBirds = false;
-var showBestInputInfo = false;
-var showData = false;
+var showAllBirds = true;
+var showBestInputInfo = true;
+var showData = true;
 
 var polesPassed = 0;
 var bestPolesPassed = 0;
@@ -72,44 +72,20 @@ function drawEverything (){
 }
 
 
-var showAllBirds = false;
-var showBestInputInfo = false;
-var showData = false;
+function toggleButton(key){
+  switch(key){
+    case 'brain':
+      showBestInputInfo ? showBestInputInfo = false : showBestInputInfo = true;
+      break;
 
-function toggleData(){
-  if(showData){
-    showData = false;
-    document.getElementById("stats").style.border = "1px solid white";
-    document.getElementById("stats").style.background = "transparent";
-    return;
-  }
-  showData = true;
-  document.getElementById("stats").style.border = "1px solid #4E2F8E";
-  document.getElementById("stats").style.background = "#4E2F8E";
-}
+    case 'stats':
+      showData ? showData = false : showData = true;
+      break;
 
-function toggleBrain(){
-  if(showBestInputInfo){
-    showBestInputInfo = false;
-    document.getElementById("bestBrain").style.border = "1px solid white";
-    document.getElementById("bestBrain").style.background = "transparent";
-    return;
+    case 'birds':
+      showAllBirds ? showAllBirds = false : showAllBirds = true;
+      break;
   }
-  showBestInputInfo = true;
-  document.getElementById("bestBrain").style.border = "1px solid #4E2F8E";
-  document.getElementById("bestBrain").style.background = "#4E2F8E";
-}
-
-function toggleBirds(){
-  if(showAllBirds){
-    showAllBirds = false;
-    document.getElementById("birds").style.border = "1px solid white";
-    document.getElementById("birds").style.background = "transparent";
-    return;
-  }
-  showAllBirds = true;
-  document.getElementById("birds").style.border = "1px solid #4E2F8E";
-  document.getElementById("birds").style.background = "#4E2F8E";
 }
 
 

@@ -11,6 +11,8 @@
     justify-content: space-between;
     position: relative;
     transition: all 0.2s ease;
+    height: 245px;
+    width: calc(100% - 4px);
 }
 
 .poker_blurb{
@@ -182,6 +184,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 #stg_art{
@@ -250,7 +253,7 @@
     font-size: 46px;
     line-height: 48px;
     width: calc(300% / 7 - 22px);
-    height: calc(40.9px * 3 - 22px);
+    height: calc(40.9px * 3 - 21px);
     position: absolute;
     left: calc(100% / 7 + 1px);
     top: 42px;
@@ -262,23 +265,6 @@
     position: absolute;
     left: 30px;
     top: 15px;
-}
-
-#pool_curved{
-    width: calc(200% / 7 - 2px);
-    height: 40px;
-    position: absolute;
-    left: calc(300% / 7 + 1px);
-    top: calc(42px * 4 - 4px);
-    background-color: var(--black);
-}
-
-#pool_curved div{
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid var(--white);
-    border-right: 1px solid var(--white);
-    border-radius: 0px 0px 5px 0px;
 }
 
 .pool_description{
@@ -301,6 +287,22 @@
     text-align: center;
 }
 
+.pool_line_art{
+    position: absolute;
+    height: 40.833333px;
+    width: 1px;
+    background-color: var(--purple);
+    left: calc(600% / 7 - 0.5px);
+    top: calc(40.833333px / 2 + 0.5px);
+    transform: rotate(calc(var(--j) * 1deg));
+    transition: all 0.2s ease;
+}
+
+#pool_thumbnail:hover .pool_line_art{
+    transform: rotate(calc(var(--j) * 0.5deg));
+    background-color: var(--white);
+}
+ 
 /* wordle wizard */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -340,7 +342,7 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
-    margin: 0px 0 15px 30px;
+    margin: 0px 0 30px 30px;
     bottom: 0%;
     left: 0%;
 }
@@ -363,6 +365,7 @@
     justify-content: space-between;
 }
 
+
 #ww_right h3{
     /* align-self: end; */
     padding: 10px 20px;
@@ -371,6 +374,10 @@
     transition: all 0.2s ease;
     text-align: center;
     /* margin-bottom: 15px; */
+}
+
+#wordlewizard_thumbnail:hover #ww_right h3{
+    padding: 10px 30px;
 }
 
 .ww_line_art{
@@ -418,15 +425,156 @@
 
 #long_thumbnail{
     background-color: var(--white);
+    position: relative;
+    font-family: header_font;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
 }
 
+#long_thumbnail a{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(871%) hue-rotate(342deg) brightness(96%) contrast(86%);
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+
+
+#long_thumbnail h1{
+    font-size: 46px;
+    line-height: 48px;
+    margin: 85px 0px 0px 30px;
+}
+
+#long_cir_container{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+}
+
+#long_cir_container div{
+    background-color: var(--black);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    align-self: center;
+    transition: all 0.2s ease;
+}
+
+#long_cir_container h4{
+    font-size: 5px;
+    line-height: 5px;
+    font-weight: 300;
+    align-self: center;
+    margin: 0px 5px;
+}
+
+#long_info_container{
+    margin: 60px 0px 0px 30px;
+}
+
+#long_info_container h2{
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    transition: all 0.2s ease;
+}
+
+#long_thumbnail:hover #long_info_container h2{
+    font-weight: 1000;
+}
+
+/* #long_thumbnail:hover #long_cir_container div{
+    width: 30px;
+    height: 30px;
+} */
 
 /* connect four */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 #connect_four_thumbnail{
-    background-color: var(--purple);
+    background-color: var(--black);
+    border: 1px solid var(--lightgrey);
+    font-family: header_font;
+    color: var(--white);
+    position: relative;
+}
+
+#connect_four_thumbnail a{
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+
+#connect_four_thumbnail h1{
+    font-size: 46px;
+    line-height: 48px;
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    width: calc(100% - 80px);
+    text-align: end;
+    border-top: 1px solid var(--lightgrey);
+    padding-top: 20px;
+}
+
+#cf_info_container{
+    position: absolute;
+    left: 100px;
+    top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cf_line_art{
+    position: absolute;
+    top: 15px;
+    width: 1px;
+    height: calc(var(--e) * 15px + 30px);
+    background-color: var(--lightgrey);
+    right: calc(var(--e) * -6px + 60px);
+    transition: all 0.2s ease;
+}
+
+#connect_four_thumbnail:hover .cf_line_art{
+    height: 75px;
+}
+
+#cf_cir_container{
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 125px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cf_cir_container div{
+    height: 100%;
+    background-color: var(--purple)
+}
+
+#cf_cir1{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: linear-gradient(-90deg, var(--purple), var(--red));
+    width: 30%;
+}
+
+#cf_cir2{
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--purple), var(--red));
+    width: 38%;
+}
+
+#cf_cir3{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: linear-gradient(90deg, var(--purple), var(--red));
+    width: 30%;
 }
 
 /* time four */
@@ -435,4 +583,51 @@
 
 #time{
     background-color: var(--red);
+    font-family: header_font;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#time h1{
+    font-size: 50px;
+    line-height: 52px;
+    align-self: center;
+    /* margin-bottom: 30px; */
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    /* width: 70.5%; */
+    font-family: normal_font;
+}
+
+#time h2{
+    font-size: 36px;
+    line-height: 38px;
+    align-self: center;
+    font-weight: 400;
+    margin: 60px 0px 10px 0px;
+    /* margin: 30px 0px 0px 30px; */
+}
+
+.time_blurb{
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: 400;
+    position: absolute;
+}
+
+#time_blurb_left{
+    left: 5px;
+    bottom: 5px;
+}
+
+#time_blurb_right{
+    right: 5px;
+    bottom: 5px;
+    transition: all 0.2s ease;
+}
+
+#time:hover #time_blurb_right{
+    right: calc(100% - 160px);
 }
