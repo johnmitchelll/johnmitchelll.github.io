@@ -21,6 +21,8 @@
 
 #about_me_body{
   color: rgb(191, 190, 187);
+  line-height: 40px;
+  /* text-align: justify; */
 }
 
 
@@ -50,7 +52,7 @@
     width: 20px;
     height: 20px;
     border-bottom: 5px solid rgb(78, 47, 142);
-    border-left: 5px solid rgb(78, 47, 142);
+    border-left: 5px solid rgb(235, 64, 52);
   }
   100% {
     width: 0%;
@@ -60,7 +62,7 @@
 
 #a_1{
   right: 7vw;
-  background-color: rgb(78, 47, 142);
+  background: linear-gradient(to left, rgb(235, 64, 52), rgb(78, 47, 142));
   width: 0;
   height: 5px;
   animation: growOut 1s ease infinite paused reverse;
@@ -72,4 +74,28 @@
   height: 20px;
   transform: translate(0vw, 15vh) rotate(225deg);
   animation: boarder 1s ease infinite paused reverse;
+  background: linear-gradient(to left, rgb(235, 64, 52), rgb(78, 47, 142));
+}
+
+/* 
+@media (max-width: 633px) {
+  #about_me_body{
+    line-height: 45px;
+  }
+} */
+
+
+
+@media only screen and (max-width: 1000px) {
+  #about_me_body{
+    line-height: 55px;
+  }
+
+  .about_me_hero{
+    margin-bottom: 80px;
+  }
+
+  .about_me_color_text{
+    margin-bottom: 40px;
+  }
 }

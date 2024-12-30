@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>Hands on Pathfinding Visual</title>
+  <link rel="icon" href="../../IMGS/icon.png" type="image/png">
+  <link rel = "stylesheet" type = "text/css" href = "../../CSS/index.css">
+</head>
+
+<style>
+
+	  *{
+    margin:0;
+    padding: 0;
+    background: #121212 ;
+    align-content: center;
+    font-size: 18px;
+  }
+
+  #container{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+	
+	.buttons {
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .buttons button{
+    background-color: #121212;
+    color: white;
+    border: 1px solid #FDFBF8;
+    padding: 10px 20px;
+    margin: 0px 5px;
+    border-radius: 5px;
+
+  }
+
+  #top-buttons button:hover {
+    background-color: #FDFBF8;
+    color: #121212;
+    border: 2px solid #FDFBF8;
+  }
+
+  #gameCanvas {
+    margin: 20px;
+    width: 600px;
+    height: 550px;
+    align-self: center;
+  }
+
+  #back_arrow_container{
+    position: absolute;
+    left: 80px;
+    top: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+#back_arrow_container h2{
+    font-size: 36px;
+    line-height: 36px;
+    color: var(--white);
+    align-self: center;
+    width: fit-content;
+    font-weight: 200;
+    font-family: header_font;
+}
+
+</style>
+
+<body>
+  <div id="container">
+
+    <div id="back_arrow_container" onclick="goTo('../index.html')">
+      <h2>←</h2>
+    </div>
+
+    <div class="buttons" id="top-buttons">
+      <button onclick="initMaze()">Build a Maze</button>
+      <button onclick="initAStar()">Slove With A* Pathfinding</button>
+      <button onclick="initDijkstra()">Slove With Dijkstra's Pathfinding</button>
+      <button onclick="setUp()">Reset</button>
+    </div>
+
+
+    <canvas id="gameCanvas" width="600" height="550"></canvas>
+
+    <script src="js/Main.js"></script>
+    <script src="js/Node.js"></script>
+    <script src="js/Scan.js"></script>
+    <script src="js/Graphics.js"></script>
+    <script src="js/AStar.js"></script>
+    <script src="js/Dijkstras.js"></script>
+    <script src="js/Maze.js"></script>
+    <script src="../../JS/Class.js"></script>
+
+    <div class="buttons">
+      <button onclick="changeBlockType()">Place: <span id="block"></span></button>
+    </div>
+  </div>
+
+</body>
+</hmtl>
+
+

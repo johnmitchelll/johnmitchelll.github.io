@@ -1,5 +1,6 @@
 const WALL_GAP = 350;
 var wall_speed = 4;
+var xOff = 0;
 
 function moveWalls(){
   if(walls[0].x + walls[0].w < 0){
@@ -38,15 +39,18 @@ function Wall(color){
   this.vel = wall_speed;
   this.passed = false;
   this.color = color;
+  xOff += 0.1;
+  let perlinNormal = (perlin.get(xOff, xOff) * 2 + 1)**2 / 4;
+  let heightDif = (canvas.height-170);
   this.gap = {
-              y:randomIntFromInterval(80, canvas.height-160-80),
-              h:randomIntFromInterval(160, 180)
+              y: perlinNormal * heightDif,
+              h: 170//randomIntFromInterval(160, 180)
             }
 
   this.show = function(color){
     //top wall
     canvasContext.strokeStyle = "rgba(255,255,255,1)";
-
+    canvasContext.lineWidth = 2;
     
     canvasContext.strokeRect(this.x,0,this.w,this.gap.y);
     colorRect(this.x,0, this.w,this.gap.y, color);
@@ -260,10 +264,13 @@ function Population(size){
 
       this.genNum++;
 
+      scores.push(polesPassed);
+
       this.createNewGeneration();
       this.amountAlive = this.balls.length;
       this.currentBestScore = 0;
       polesPassed = 0;
+      graphBestScore = bestPolesPassed;
 
       wall_speed = 4;
       

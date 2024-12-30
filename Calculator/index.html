@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
+</head>
+
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
+<link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./calc.css">
+
+
+<body>
+    <div id="container">
+
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
+
+
+      <div id="container_sub">
+
+        <div id="back_arrow_container" onclick="goTo('../index.html')">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>Graphing Calculator</h1>
+          <a href="https://github.com/johnmitchelll/Calculus-Visualization-"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+              Graphing calculators have always fascinated me, so one day, during a cross-country flight, 
+              I decided to challenge myself by coding one from scratch. I managed to get some basic 
+              functionality working, but it was pretty underwhelming. When I got home, I took a deeper 
+              dive into how these calculators work, and I was hooked. Over the next few months, 
+              I dedicated countless hours to refining the project, striving to make it as close 
+              to the real thing as possible.<br><br>
+
+              That’s not to say it’s perfect—it can only graph functions in terms of "x," 
+              and tools like Desmos certainly do it better. However, it was incredibly rewarding 
+              to have a project I could actually use in my Calculus courses. I even added an easy-to-use 
+              integral and derivative mode, which provides quick visualizations and helps with
+               understanding the behavior of functions.
+            </p>
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/calc1.png" class="display_image">
+                <img src="./IMGS/calc2.png">
+                <img src="./IMGS/calc3.png">
+              </div>
+            </div>
+          </div>
+          
+  
+          <p id="mid_p_bottom">
+            The second part of this project, "Graphing Series," came about after showing my Calc II 
+            professor the original version. He suggested creating a visualization for series. With 
+            this feature, you can input a function in terms of "n" and a range, then increase "n" 
+            to watch the series converge (or not). For an extra layer of fun, you can use the variable 
+            "j" in a function to add animation. This works because "j" is a global variable that 
+            continuously increments from zero when the program starts, allowing for dynamic and playful visualizations.
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('./project/index.html')">Check this Project Out</button>
+        </div>
+
+        <div id="calc_bottom_blurb">
+          <div class="calc_bottom_blurb_square" style="--i: 0;"></div>
+          <div class="calc_bottom_blurb_square" style="--i: 1;"></div>
+          <div class="calc_bottom_blurb_square" style="--i: 2;"></div>
+          
+          <div id="calc_bottom_blurb_line"></div>
+        </div>
+      </div>
+    </div>
+      
+
+    <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
+</body>
+</hmtl>

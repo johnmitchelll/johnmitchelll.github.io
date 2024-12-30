@@ -17,46 +17,80 @@
 <body>
     <div id="container">
 
-      <div id="back_arrow_container" onclick="goTo('../index.html')">
-        <h2>←</h2>
-      </div>
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
 
-      <div id="top_container">
-        <h1>Flappy Bird AI Using NEAT</h1>
-        <a><img src="../IMGS/github.svg"></a>
-      </div>
+      <div id="container_sub">
+        <div id="long_moving_text_top">
+          <h5>Neuroevolution of augmenting topologies, Neuroevolution of augmenting topologies, Neuroevolution of augmenting topologies</h5>
+        </div>
 
-      <div id="mid_container">
-        <p>This is my neural network I built from scratch in vanilla JavaScript. You can watch the birds getting better and 
-            better as they learn how to fly through the pipes. The "learning" comes from the genetic algorithm under the hood. 
-            More specificly this project uses NEAT (Neural Evolution of Augmenting Topologies).<br><br>
+        <div id="back_arrow_container" onclick="goTo('../index.html')">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>Flappy Bird AI Using NEAT</h1>
+          <a href="https://github.com/johnmitchelll/Flappy-Bird-AI"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+              This is a neural network I built from scratch using vanilla JavaScript. 
+              You can watch the birds gradually improve as they learn to navigate through 
+              the pipes. The "learning" is powered by a genetic algorithm under the hood,
+               specifically using NEAT (Neural Evolution of Augmenting Topologies).<br><br>
 
-            We take an initial population of birds with completely randomized brains and let them out into the world. Majority 
-            of the time these birds are very dumb. After all the birds have crashed, we take the best birds brain and duplicate 
-            it into the other birds before mutating it slightly. This will ensure that through random evolution the birds will 
-            get better overtime.<br><br>
-
-            Each one of these bird's brains take in three bits of information and can make one decision: to jump, or not jump.
-            They can see the horizontal distance to the next pole (green) and the vertical height to the top and bottom of the 
-            next pole (blue and red). This works well with something as simple as Flappy Bird because of the minimal complexity. 
-            This is one of the most simple versions of what people consider AI today and is a great visualization as to what 
-            simulated integligence is.
-        </p>
-      </div>
-
-      <div id="bottom_container">
-        <button onclick="goTo('./project/index.html')">Check this Project Out</button>
-
-        <div>
-          <div id="bottom_img_backdrop"></div>
-          <div id="bottom_img_container">
-            <img src="./IMGS/flappy1.png" class="display_image">
-            <img src="./IMGS/flappy2.png">
-            <img src="./IMGS/flappy3.png">
+              The process starts with a population of birds that have completely randomized brains 
+              and sets them loose in the world. Most of the time, these birds behave quite poorly. 
+              Once all the birds have crashed, the brain of the best-performing bird is duplicated 
+              across the population, with slight mutations applied. This ensures that, through random 
+              evolution, the birds improve over time.
+            </p>
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/flappy1.png" class="display_image">
+                <img src="./IMGS/flappy2.png">
+                <img src="./IMGS/flappy3.png">
+              </div>
+            </div>
           </div>
+          
+  
+          <p id="mid_p_bottom">
+            Each bird's brain processes three pieces of information and makes one decision:
+             to jump or not to jump. They "see" the horizontal distance to the next pole 
+             (green) and the vertical distances to the top and bottom of the next pole 
+             (blue and red). This simplicity works perfectly for something like Flappy 
+             'Bird due to its minimal complexity. It's a basic example of what people 
+             today often refer to as AI and provides a great visualization of simulated 
+             intelligence in action.
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('./project/index.html')">Check this Project Out</button>
+        </div>
+
+        <div id="long_moving_text">
+          <h5>This is an example of how AI is made, but on a smaller level. This is an example of how AI is made, but on a smaller level. This is an example of how AI is made, but on a smaller level.</h5>
         </div>
       </div>
     </div>
+      
 
     <script src="../JS/Class.js"></script>
 

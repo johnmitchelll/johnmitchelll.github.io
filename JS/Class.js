@@ -56,19 +56,20 @@ function goTo(path){
   cover.style.width = "100vw";
   cover.style.height = "100vh";
   cover.style.position = "fixed";
+  cover.style.zIndex = "99999";
   cover.style.backgroundColor = "rgb(18,18,18)";
   container.appendChild(cover);
   cover.style.animation = "fadeIn 0.5s linear";
 
   setTimeout(() => {
-    window.location.href = "./" + path;
+    window.location.href = path;
   }, 500);
 }
 
 
 function calculateCollegeProgress(){
   let start = new Date('2021-08-19T12:00:00').getTime();
-  let end = new Date('2025-05-10T12:00:00').getTime();
+  let end = new Date('2025-12-10T12:00:00').getTime();
   let now = Date.now();
 
   let dist = end - start;
@@ -130,6 +131,12 @@ function randomIntFromInterval(min, max) { // min and max included
 
 function distanceOfTwoPoints(x1, y1, x2, y2){
   return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2))
+}
+
+function getAngleWithXAxis(point) {
+  const { x, y } = point;
+  const angle = Math.atan2(y, x);
+  return angle;
 }
 
 function cycleThroughImages(div){

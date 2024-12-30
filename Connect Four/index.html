@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
+</head>
+
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
+<link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./connectfour.css">
+
+
+<body>
+    <div id="container">
+
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
+
+      <div id="container_sub">
+        <div id="back_arrow_container" onclick="goTo('../index.html')">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>Connect Four AI</h1>
+          <a href="https://github.com/johnmitchelll/Connect-Four"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+                Connect Four seems like an easy enough game, but there is actually a fair amount of strategy involved.
+                This AI that I made using the MiniMax algorithm looks into future possiblities to formulate a strategy. 
+                Its goal is to minimize its oponents maximum gain, hence MiniMax.<br><br>
+  
+                This AI isnt perfect and sometimes it will make moves that don't make too much sense. But out of the hundreds of games
+                I've played against it I have only won a handful of times or tied. See if you can do any better against it. This 
+                was one of my first projects I made back in highschool and was a huge stepping stone for my learning of JS.
+            </p>
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/cf1.png" class="display_image">
+                <img src="./IMGS/cf2.png">
+                <img src="./IMGS/cf3.png">
+              </div>
+            </div>
+          </div>
+          
+  
+          <p id="mid_p_bottom">
+              <!-- Each one of these bird's brains take in three bits of information and can make one decision: to jump, or not jump.
+              They can see the horizontal distance to the next pole (green) and the vertical height to the top and bottom of the 
+              next pole (blue and red). This works well with something as simple as Flappy Bird because of the minimal complexity. 
+              This is one of the most simple versions of what people consider AI today and is a great visualization as to what 
+              simulated integligence is. -->
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('./project/index.html')">Check this Project Out</button>
+        </div>
+
+        <div class="cf_line_art" style="--e: 1;"></div>
+        <div class="cf_line_art" style="--e: 2;"></div>
+        <div class="cf_line_art" style="--e: 3;"></div>
+      </div>
+    </div>
+      
+
+    <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
+</body>
+</hmtl>

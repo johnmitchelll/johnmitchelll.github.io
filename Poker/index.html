@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
+</head>
+
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
+<link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./poker.css">
+
+
+<body>
+    <div id="container">
+
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
+
+
+      <div id="container_sub">
+
+        <div id="poker_top_right_art">
+          <div class="poker_art_circle" id="poker_cir1"></div>
+          <div class="poker_art_circle" id="poker_cir2"></div>
+        </div>
+
+        <div id="back_arrow_container" onclick="goTo('../index.html')">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>Poker & Casino</h1>
+          <a href="https://github.com/johnmitchelll/Poker"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+              This is by far the biggest and best project I’ve created so far. 
+              It’s a full-stack application featuring a working database for 
+              user profiles and real-time leaderboards. The backend handles 
+              traffic, user creation, and profile editing. It also includes 
+              a Poker AI you can play against in heads-up matches, functioning 
+              multiplayer to compete with friends online, competitive slots, 
+              and a variation of Texas Hold'em called Kuhn Poker.<br><br>
+
+              I started this project out of my love for poker. Initially, 
+              I just wanted to build a Poker AI, but it evolved into something 
+              my friends and I could enjoy together, challenging each other to 
+              beat high scores. This project taught me so much about web 
+              development, and it’s been incredibly rewarding to see it all come together.
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/poker1.png" class="display_image">
+                <img src="./IMGS/poker2.png">
+                <img src="./IMGS/poker3.png">
+                <img src="./IMGS/poker4.png">
+              </div>
+            </div>
+          </div>
+          
+  
+          <p id="mid_p_bottom">
+              <!-- The second part of this project (Graphing Series) came about after I showed my Calc II proffesor this and he 
+              asked me to create a visualization for series. You input a function in terms of "n" and and an area, you can then 
+              increase n and watch as the series converges or not. Also, for some extra fun, if you use the varible "j" anywhere in a funciton
+              you can animate things. This is because j is a global varible that is constanly increasing starting from zero when the program starts. -->
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('https\:\/\/holdem-version1-cf3681a6d8ef.herokuapp.com\/')">Check this Project Out</button>
+        </div>
+      </div>
+    </div>
+      
+
+    <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
+</body>
+</hmtl>

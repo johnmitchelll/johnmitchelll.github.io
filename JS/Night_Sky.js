@@ -7,13 +7,15 @@ var moon = { x: 100, y: 60, r: 30 };
 var moonShadow = { x: moon.x+8, y: moon.y-8, r: moon.r-1 };
 var stars = new Array(100);
 
+var ssRate = undefined;
+
 function ShootingStar(ang, dir){
   this.ang = Math.random() * Math.PI*2;
   this.distNear = 0;
   this.distFar = 0;
   this.vel = 25+Math.random()*5;
   this.fazeTwo = false;
-  this.start = { x: night_sky.canvas.width/2+Math.cos(this.ang)*-400, y: night_sky.canvas.height/2+Math.sin(this.ang)*-400 };
+  this.start = { x: night_sky.canvas.width/2+Math.cos(this.ang)*-400+(300*Math.random()-150), y: night_sky.canvas.height/2+Math.sin(this.ang)*-400+(300*Math.random()-150) };
 }
 
 night_sky.initNightSky = function(){
@@ -31,6 +33,15 @@ night_sky.initNightSky = function(){
     twinkleStars[i] = { i: Math.floor(Math.random()*stars.length), dir: 1 };
     twinkleStars[i].r = stars[twinkleStars[i].i].r;
   }
+
+  // night_sky.canvas.addEventListener('mouseover', () => {
+  //   ssRate = 150;
+  //   night_sky.createNewShootingStar();
+  // });
+
+  // night_sky.canvas.addEventListener('mouseout', () => {
+  //   ssRate = undefined;
+  // });
 }
 
 night_sky.drawNightSky = function(){
@@ -65,7 +76,7 @@ night_sky.drawNightSky = function(){
                   shootingStars[i].start.y+Math.sin(shootingStars[i].ang)*shootingStars[i].distFar, 
                   shootingStars[i].start.x+Math.cos(shootingStars[i].ang)*shootingStars[i].distNear, 
                   shootingStars[i].start.y+Math.sin(shootingStars[i].ang)*shootingStars[i].distNear, 
-                  1, "rgb(253,251,248)", "rgba(253,251,248,0.2)");
+                  1, "rgb(253,251,248)", "rgba(253,251,248,0.3)");
 
     if(shootingStars[i].fazeTwo == false){
         shootingStars[i].distFar += shootingStars[i].vel;
@@ -98,5 +109,11 @@ night_sky.drawNightSky = function(){
 
 night_sky.createNewShootingStar = function(){
   shootingStars.push(new ShootingStar());
-  setTimeout(night_sky.createNewShootingStar, 3000+Math.random()*5000);
+
+  // if(!ssRate){
+    setTimeout(night_sky.createNewShootingStar, 3000+Math.random()*5000);
+    // return;
+  // }
+
+  // setTimeout(night_sky.createNewShootingStar, ssRate);
 }

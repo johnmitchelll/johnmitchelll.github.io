@@ -38,6 +38,9 @@
 #poker_github_blurb{
     width: 50px;
     margin-top: 25px;
+    text-decoration: none;
+    color: var(--white);
+    border: none;
 }
 
 
@@ -457,7 +460,7 @@
     background-color: var(--black);
     width: 15px;
     height: 15px;
-    border-radius: 50%;
+    border-radius: 50% 25% 50% 25%;
     align-self: center;
     transition: all 0.2s ease;
 }
@@ -465,7 +468,7 @@
 #long_cir_container h4{
     font-size: 5px;
     line-height: 5px;
-    font-weight: 300;
+    font-weight: 200;
     align-self: center;
     margin: 0px 5px;
 }
@@ -485,10 +488,52 @@
     font-weight: 1000;
 }
 
-/* #long_thumbnail:hover #long_cir_container div{
-    width: 30px;
-    height: 30px;
-} */
+#long_moving_text{
+    position: absolute;
+    text-wrap: nowrap;
+    transform: rotate(-45deg);
+    /* right: 100px;
+    bottom: -220px; */
+    animation: move_long_text 8s linear infinite;
+}
+
+#long_moving_text_top{
+    position: absolute;
+    text-wrap: nowrap;
+    transform: rotate(45deg);
+    right: -200px;
+    top: -160px;
+    animation: move_long_text_top 6s linear infinite;
+}
+
+
+@keyframes move_long_text {
+    0% {
+        right: -450px;
+        bottom: 0px;
+    }
+
+    100% {
+        right: -177px;
+        bottom: -273px;
+    }
+}
+
+@keyframes move_long_text_top {
+    0% {
+        right: -200px;
+        top: -160px;
+    }
+
+    100% {
+        right: -395px;
+        top: 35px;
+    }
+}
+
+#long_thumbnail:hover #long_cir_container div{
+    border-radius: 0%;
+}
 
 /* connect four */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -611,9 +656,9 @@
 }
 
 .time_blurb{
-    font-size: 10px;
-    line-height: 10px;
-    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
     position: absolute;
 }
 
@@ -629,5 +674,5 @@
 }
 
 #time:hover #time_blurb_right{
-    right: calc(100% - 160px);
+    right: calc(100% - 203px);
 }

@@ -6,10 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setCSSVars();
 
-  grid.draw();
-
   night_sky.initNightSky();
-
   
   setTimeout(small2Animate, 2000);
 
@@ -18,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(() => {
     updateDynamicScrollers();
     night_sky.drawNightSky();
+    three_dimentional.draw();
   }, 1000/30);
 
   
@@ -25,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementsByClassName('arrow')[0].addEventListener('click', function() {
     const content = document.getElementById('projects');
-    content.scrollIntoView({
-      behavior: 'smooth'
-    });
+    content.scrollIntoView({ behavior: 'smooth' });
   });
 });

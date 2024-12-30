@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
+</head>
+
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
+<link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./pool.css">
+
+
+<body>
+    <div id="container">
+
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
+
+      <div id="background_wrapper">
+        <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="pool_row last_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      </div>
+
+
+      <div id="container_sub">
+
+        <div id="back_arrow_container" onclick="goTo('../index.html')">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>8-Ball Pool With AI</h1>
+          <a href="https://github.com/johnmitchelll/Pool"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+              This was a project I created at the end of my freshman year of college. 
+              I built both the UI and the AI completely from scratch using vanilla JavaScript, 
+              without relying on any libraries! While this approach wasn’t the most practical, 
+              it worked, and I’m happy with the result. It’s worth noting that several rules 
+              from real-life billiards are missing here—this is an 8-Ball game, not an exact 
+              simulation. I made it purely to learn and have fun.<br><br>
+
+              The AI works by simulating thousands of potential future shots it could take. 
+              For each of these hypothetical shots, it evaluates the outcome and assigns a score 
+              based on how favorable it is. The AI then chooses the shot with the highest score.
+            </p>
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/pool1.png" class="display_image">
+                <img src="./IMGS/pool2.png">
+                <img src="./IMGS/pool3.png">
+              </div>
+            </div>
+          </div>
+          
+  
+          <p id="mid_p_bottom">
+            That said, the AI is far from perfect. It uses a brute-force algorithm, 
+            which isn’t the most efficient approach. For a problem like this, an extensive 
+            amount of data about the cue ball's state is needed to make consistently good 
+            decisions. While the AI occasionally makes incredible shots, it also struggles 
+            with some "easy" ones. Despite its flaws, this is one of my favorite projects 
+            to date. Also, while I’m calling this an AI, it’s really a catch-all term for 
+            the algorithms I’ve designed for the game.
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('./project/index.html')">Check this Project Out</button>
+        </div>
+
+        <div class="cf_line_art" style="--e: 1;"></div>
+        <div class="cf_line_art" style="--e: 2;"></div>
+        <div class="cf_line_art" style="--e: 3;"></div>
+      </div>
+    </div>
+      
+
+    <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
+</body>
+</hmtl>

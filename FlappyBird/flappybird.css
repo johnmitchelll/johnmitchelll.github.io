@@ -1,5 +1,7 @@
 #container {
     color: var(--black);
+    overflow: hidden;
+    position: relative;
 }
 
 #top_container a{
@@ -9,4 +11,49 @@
 #bottom_container button{
     background-color: transparent;
     border: 2px solid var(--black);
+}
+
+
+
+#long_moving_text{
+    position: absolute;
+    text-wrap: nowrap;
+    transform: rotate(-45deg);
+    right: -150px;
+    bottom: -220px;
+    animation: move_long_text 8s linear infinite;
+}
+
+#long_moving_text_top{
+    position: absolute;
+    text-wrap: nowrap;
+    transform: rotate(45deg);
+    right: -150px;
+    top: -110px;
+    animation: move_long_text_top 6s linear infinite;
+}
+
+
+@keyframes move_long_text {
+    0% {
+        right: -450px;
+        bottom: 100px;
+    }
+
+    100% {
+        right: -177px;
+        bottom: -173px;
+    }
+}
+
+@keyframes move_long_text_top {
+    0% {
+        right: -150px;
+        top: -160px;
+    }
+
+    100% {
+        right: -345px;
+        top: 35px;
+    }
 }

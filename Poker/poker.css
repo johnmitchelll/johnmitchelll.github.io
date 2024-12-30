@@ -1,0 +1,66 @@
+
+#container {
+    color: var(--white);
+    background-color: var(--black);
+    position: relative;
+}
+
+#container_sub{
+    z-index: 1;
+}
+
+#back_arrow_container{
+    border: 2px solid var(--white);
+}
+
+#mid_p_top{
+    padding: 10px 10px 20px 10px;
+    margin: 20px 40px 0px 0px;
+}
+
+#mid_p_bottom{
+    padding: 10px;
+}
+
+#bottom_container button{
+    color: var(--white);
+    position: relative;
+    border: 1px solid var(--white);
+    background-color: transparent;
+}
+
+#back_arrow_container h2{
+    color: var(--white);
+}
+
+
+#poker_top_right_art{
+    display: flex;
+    position: absolute;
+    right:  100px;
+    top: 100px;
+}
+
+.poker_art_circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+#poker_cir1{
+    background-color: var(--red);
+    transition: all 0.2s ease;
+}
+
+#poker_cir2{
+    background-color: var(--purple);
+    transition: all 0.2s ease;
+}
+
+#poker_top_right_art:hover #poker_cir1{
+    background-color: var(--purple);
+}
+
+#poker_top_right_art:hover #poker_cir2{
+    background-color: var(--red);
+}

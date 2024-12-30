@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
+</head>
+
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
+<link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./wordle.css">
+
+
+<body>
+    <div id="container">
+
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
+
+
+      <div id="container_sub">
+
+        <div id="back_arrow_container" onclick="goTo('../index.html')">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>Daily Wordle Solver </h1>
+          <a href="https://github.com/johnmitchelll/Wordle-Wizard"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+              Wordle immediately captured my attention as a computer science enthusiast, 
+              and I knew I had to "solve" the game. What you're looking at is actually 
+              my third attempt to create a bot capable of solving Wordle perfectly. I 
+              was determined to build a bot that could guarantee a solution to any word, 
+              so when my earlier attempts fell short, I started from scratch.<br><br>
+
+              This bot uses the official Wordle word list, and you can watch it solve 
+              every word available if you’d like. The way it works is by analyzing the 
+              list of possible correct answers and then selecting the word that would 
+              narrow down that list the most. It plays that word, repeating the process 
+              until the solution is found. While the concept sounds simple, implementing 
+              it was a challenge. And, of course, the entire project is written in vanilla 
+              JavaScript, with a little HTML and CSS for the interface.
+            </p>
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/wordle1.png" class="display_image">
+                <img src="./IMGS/wordle2.png">
+                <img src="./IMGS/wordle3.png">
+              </div>
+            </div>
+          </div>
+          
+  
+          <p id="mid_p_bottom">
+              <!-- The second part of this project (Graphing Series) came about after I showed my Calc II proffesor this and he 
+              asked me to create a visualization for series. You input a function in terms of "n" and and an area, you can then 
+              increase n and watch as the series converges or not. Also, for some extra fun, if you use the varible "j" anywhere in a funciton
+              you can animate things. This is because j is a global varible that is constanly increasing starting from zero when the program starts. -->
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('./project/index.html')">Check this Project Out</button>
+        </div>
+
+
+        <div class="ww_line_art" id="ww_line_art1"></div>
+        <div class="ww_line_art" id="ww_line_art2"></div>
+      </div>
+    </div>
+      
+
+    <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
+</body>
+</hmtl>

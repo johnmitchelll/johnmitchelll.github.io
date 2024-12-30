@@ -1,11 +1,8 @@
-
 * {
   margin: 0px;
   padding: 0px;
   
 }
-
-
 
 * button{
   cursor: pointer;
@@ -13,6 +10,7 @@
 
 * a{
   cursor: pointer;
+  text-decoration: none;
 }
 
 :root{
@@ -53,6 +51,8 @@ html {
   position: fixed;
   z-index: 10000;
   pointer-events: none;
+  /* width: 100vw; */
+ min-height: 100vh;
 }
 
 #container{

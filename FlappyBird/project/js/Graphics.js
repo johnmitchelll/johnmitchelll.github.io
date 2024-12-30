@@ -11,6 +11,9 @@ var showData = true;
 var polesPassed = 0;
 var bestPolesPassed = 0;
 
+var scores = [0];
+var graphBestScore = 0;
+
 function drawEverything (){
   colorRect(0,0, canvas.width,canvas.height, 'rgb(18,18,18)');  
   for (var i = 0; i < walls.length; i++) {
@@ -41,6 +44,8 @@ function drawEverything (){
       let by = population.balls[display].byStrength;
       population.balls[display].brain.display(bestId, x, ty, by);
     }
+
+    if(showData) drawGraph(canvas.width/12, 11*canvas.height/12 - 100, 200, 100);
     
     population.show();
 
@@ -51,9 +56,7 @@ function drawEverything (){
   drawText('white', '30px normal_font', polesPassed, 
           canvas.width/2 - width/2, 100);
 
-    if(showData == false){
-      return;
-    }
+  if(showData == false) return;
 
   width = measureTextWidth("Best Score: " + bestPolesPassed, "normal_font", 30);
 
@@ -109,6 +112,52 @@ function showAllBrains(){
   }
 }
 
+const MAX_HORZ_MARKS = 3;
+
+function drawGraph(x, y, w, h){
+  // const lines
+  drawLine(x, y, x, y+h, 1, "white");
+  drawLine(x, y+h, x+w, y+h, 1, "white");
+  drawLine(x,y+h,x-5,y+h+5, 1,"white")
+  drawText("white", "12px normal_font", "0", x-17,y+h+15);
+
+  // text
+  let width = measureTextWidth("Generation", "normal_font", 12);
+  drawText("white", "12px normal_font", "Generation", x+w/2-width/2, y+h+32);
+
+  canvasContext.save();
+  canvasContext.rotate(Math.PI/2);
+  canvasContext.translate(canvas.width/2, canvas.height/2);
+  width = measureTextWidth("Score", "normal_font", 12);
+  drawText("white", "12px normal_font", "Score", -canvas.width/2 + 11*canvas.height/12-80+width/2, -canvas.height/2 - 20);
+  canvasContext.restore();
+
+  // graph
+  let maxScore = graphBestScore;
+  if(graphBestScore == 0) maxScore = 1;
+  for (let i = 1; i < scores.length; i++) {
+    drawLine(x + w * (i-1)/(scores.length-1), y+h - h * scores[i-1]/graphBestScore, x + w * i/(scores.length-1), y+h - h * scores[i]/graphBestScore, 1,"white");
+  }
+  
+  // vert mark
+  width = measureTextWidth(graphBestScore, "normal_font", 12);
+  if(graphBestScore > 0) drawText("white", "12px normal_font", graphBestScore, x-width-4, y+12);
+  width = measureTextWidth(Math.floor(graphBestScore/2), "normal_font", 12);
+  if(graphBestScore > 1) drawText("white", "12px normal_font", Math.floor(graphBestScore/2), x-width-4, y+h/2+12);
+
+  // horzontal marks
+  for (let i = 0; i < Math.min(MAX_HORZ_MARKS, scores.length-1); i++) {
+    if(scores.length <= MAX_HORZ_MARKS){
+      width = measureTextWidth(i+1, "normal_font", 12);
+      drawText("white", "12px normal_font", i+1, x + w * (i+1)/(scores.length-1) - width/2, y+h+12);
+    }else{
+      let index = Math.ceil(scores.length * (i+1) / MAX_HORZ_MARKS);
+      width = measureTextWidth(index, "normal_font", 12);
+      drawText("white", "12px normal_font", index, x + w * index/scores.length - width/2, y+h+12);
+    }
+  }
+}
+
 function colorRect(topLeftX,topLeftY, boxWidth,boxHeight, fillColor) {
   canvasContext.fillStyle = fillColor;
   canvasContext.fillRect(topLeftX,topLeftY, boxWidth,boxHeight);
@@ -143,7 +192,7 @@ function randomIntFromInterval(min, max) { // min and max included
   return Math.random() * (max - min) + min;
 }
 
-  function drawText(color, font, words, X, Y){
+function drawText(color, font, words, X, Y){
     canvasContext.fillStyle = color;
     canvasContext.font = font;
     canvasContext.fillText(words, X, Y);
