@@ -1,10 +1,16 @@
-var r = 35;
-var g = 25;
-var b = 112;
-var rDir = 1;
-var gDir = 1;
-var bDir = 1;
-var dirMag = 0.2;
+var r = 78;
+var g = 47;
+var b = 142;
+
+const STEPS = 30;
+const R_DIR_MAG = (235 - r) / STEPS;
+const G_DIR_MAG = (64 - g) / STEPS;
+const B_DIR_MAG = (b - 52) / STEPS;
+
+var rDir = R_DIR_MAG;
+var gDir = G_DIR_MAG;
+var bDir = -B_DIR_MAG;
+
 
 function Particle() {
 
@@ -26,9 +32,10 @@ function Particle() {
 
   this.show = function(color) {
     if(color){
-      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.2+'')
+      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(35, 25, 112, 0.4)')
+      // perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.4+'')
     }else{
-      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.05)')
+      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.075)')
     }
     
   }
@@ -81,15 +88,23 @@ function Particle() {
 
 function updateColor(){
     r += rDir;
-    if (r > 100) {
-      rDir = -dirMag;
-    }else if(r < 0){
-      rDir = dirMag;
+    if (r > 235) {
+      rDir = -R_DIR_MAG;
+    }else if(r < 78){
+      rDir = R_DIR_MAG;
     }
+
     g += gDir;
-    if (g > 50) {
-      gDir = -dirMag;
-    }else if(g < 0){
-      gDir = dirMag;
+    if (g > 64) {
+      gDir = -G_DIR_MAG;
+    }else if(g < 47){
+      gDir = G_DIR_MAG;
+    }
+
+    b += bDir;
+    if (b > 142) {
+      bDir = -B_DIR_MAG;
+    }else if(b < 52){
+      bDir = B_DIR_MAG;
     }
 }

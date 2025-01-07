@@ -86,7 +86,6 @@
 
       <div class="grower dynamic_container" id="a_1"></div>
 
-
       <h1 class="hero about_me_color_text">Learn a Little</h1>
       <h1 class="hero about_me_hero">About Me</h1>
       <h1 class="normal_text" id="about_me_body">
@@ -96,8 +95,6 @@
       </h1>
 
       <div class="grower dynamic_container" id="a_2"></div>
-
-
     </div>
 
     
@@ -110,14 +107,12 @@
       </div>
       
       
-      <!-- <canvas id="projects_canvas"></canvas> -->
-
       <div id="project_thumbnails">
 
         <div id="left_projects_container" class="projects_container">
           <div class="thumbnail thumbnail_mid" id="poker_thumbnail" onclick="goTo('./Poker/index.html')">
             <div id="poker_top">
-              <a href="https://github.com/johnmitchelll/Poker">
+              <a href="https://github.com/johnmitchelll/Poker" onclick="event.stopPropagation();">
                 <img src="./IMGS/github.svg"> 
                 <h4 class="poker_blurb" id="poker_github_blurb">hey check out this project's github</h4>
               </a>
@@ -150,7 +145,7 @@
             <div class="rank_hamburger" style="--i: 1;"></div>
             <div class="rank_hamburger" style="--i: 2;"></div>
 
-            <a href="https://github.com/johnmitchelll/RayTracer"> <img src="./IMGS/github.svg"> </a>
+            <a href="https://github.com/johnmitchelll/RayTracer" onclick="event.stopPropagation();"> <img src="./IMGS/github.svg"> </a>
             <div id="rank_circle_dynamic"></div>
             <h1>Ray Trace Simulator</h1>
 
@@ -182,7 +177,7 @@
           </div>
 
           <div class="thumbnail thumbnail_mid" id="wordlewizard_thumbnail" onclick="goTo('./Wordle/index.html')">
-            <a href="https://github.com/johnmitchelll/Wordle-Wizard">
+            <a href="https://github.com/johnmitchelll/Wordle-Wizard" onclick="event.stopPropagation();">
               <img src="./IMGS/github.svg"> 
               <h4>This is proven to get the word every day</h4>
             </a>
@@ -233,7 +228,7 @@
           <div class="thumbnail thumbnail_large" id="pathfinding_thumbnail" onclick="goTo('./Pathfinding/index.html')">
             <div id="pf_mid_line"></div>
 
-            <a href="https://github.com/johnmitchelll/Pathfinding"> <img src="./IMGS/github.svg"> </a>
+            <a href="https://github.com/johnmitchelll/Pathfinding" onclick="event.stopPropagation();"> <img src="./IMGS/github.svg"> </a>
 
             <div class="pf_art_sub" style="--j: 0;"></div>
             <div class="pf_art_sub" style="--j: 1;"></div>
@@ -257,18 +252,20 @@
               </div>
             </div>
 
-            <h5 id="pf_left_blurb">This is one of the first projects I ever made and I still love how it looks</h5>
+            <h5 id="pf_left_blurb">This is one of the first projects I ever made.</h5>
 
+
+            <div id="pf_box_background"></div>
+            <canvas id="pf_faded_lights_art"></canvas>
             <div id="pf_box">
               <div id="pf_box_cir"></div>
-              <h5 id="pf_top_blurb">Gives you an</h5>
-              <h5 id="pf_right_blurb">idea on how map apps work on the inside</h5>
-          
+              <!-- <h5 id="pf_top_blurb">Gives you an</h5>
+              <h5 id="pf_right_blurb">idea on how map apps work on the inside</h5> -->
             </div>
           </div>
 
           <div class="thumbnail thumbnail_mid" id="connect_four_thumbnail" onclick="goTo('Connect Four/index.html')">
-            <a href="https://github.com/johnmitchelll/Connect-Four"> <img src="./IMGS/github.svg"> </a>
+            <a href="https://github.com/johnmitchelll/Connect-Four" onclick="event.stopPropagation();"> <img src="./IMGS/github.svg"> </a>
 
             <div id="cf_info_container">
               <h2>Minimax</h2>
@@ -294,7 +291,7 @@
 
         <div id="right_projects_container" class="projects_container">
           <div class="thumbnail thumbnail_mid" id="sigtau_thumbnail" onclick="goTo('./Sig Tau/index.html')">
-            <a href="https://github.com/johnmitchelll/SigTauGamma_SignUp">
+            <a href="https://github.com/johnmitchelll/SigTauGamma_SignUp" onclick="event.stopPropagation();">
               <img src="./IMGS/github.svg"> 
               <h4 class="stg_blurb" id="stg_github_blurb">this is the github to this project</h4>
             </a>
@@ -368,7 +365,7 @@
             <div class="pool_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             <div class="pool_row last_row"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-            <a href="https://github.com/johnmitchelll/Pool">
+            <a href="https://github.com/johnmitchelll/Pool" onclick="event.stopPropagation();">
               <img src="./IMGS/github.svg"> 
             </a>
 
@@ -390,7 +387,9 @@
           </div>
 
           <div class="thumbnail thumbnail_large" id="calc_thumbnail" onclick="goTo('./Calculator/index.html')">
-            <a href="https://github.com/johnmitchelll/Calculus-Visualization-"><img src="./IMGS/github.svg"> </a>
+            <a href="https://github.com/johnmitchelll/Calculus-Visualization-" onclick="event.stopPropagation();"> 
+              <img src="./IMGS/github.svg"> 
+            </a>
             <h4>Great for Calculus 1 and 2, I would use it when I needed a quick visualization for a problem</h4>
 
             <h1 id="calc_hero">Graphing Calculator</h1>
@@ -424,7 +423,9 @@
                 <h5>Neuroevolution of augmenting topologies, Neuroevolution of augmenting topologies, Neuroevolution of augmenting topologies</h5>
               </div>
 
-              <a href="https://github.com/johnmitchelll/Flappy-Bird-AI"> <img src="./IMGS/github.svg"> </a>
+              <a href="https://github.com/johnmitchelll/Flappy-Bird-AI" onclick="event.stopPropagation();"> 
+                <img src="./IMGS/github.svg"> 
+              </a>
 
               <h1>Flappy Bird AI Using NEAT</h1>
 
@@ -434,19 +435,21 @@
                 <!-- <h2>Genetic Algorithm</h2> -->
               </div>
 
-              <div id="long_cir_container">
+              <!-- <div id="long_cir_container">
                 <div></div>
                 <h4>This one is super cool</h4>
-              </div>
+              </div> -->
 
               <div id="long_moving_text">
                 <h5>This is an example of how AI is made, but on a smaller level. This is an example of how AI is made, but on a smaller level. This is an example of how AI is made, but</h5>
               </div>
             </div>
             
-            <div class="thumbnail_mid_container" onclick="goTo('./Small Projects/index.html')">
-              <div class="thumbnail thumbnail_small" id="small_5">
-                <a href="https://github.com/johnmitchelll/Small-Projects"><img src="./IMGS/github.svg"> </a>
+            <div class="thumbnail_mid_container">
+              <div class="thumbnail thumbnail_small" id="small_5"  onclick="goTo('./Small Projects/index.html')">
+                <a href="https://github.com/johnmitchelll/Small-Projects" onclick="event.stopPropagation();">
+                  <img src="./IMGS/github.svg"> 
+                </a>
                 <div class="small5_star" id="small5_star_1"></div>
                 <div class="small5_star" id="small5_star_2"></div>
                 <div class="small5_star" id="small5_star_3"></div>
@@ -459,7 +462,6 @@
               <div class="thumbnail thumbnail_small" id="small_6">
                 <canvas width="285px" height="245px" id="night_sky"></canvas>
               </div>
-
             </div>
           </div>
 
@@ -483,6 +485,7 @@
 
   <script src="JS/Class.js"></script>
   <script src="JS/Night_Sky.js"></script>
+  <script src="JS/Faded_Lights.js"></script>
   <script src="JS/Typing.js"></script>
   <script src="JS/About_Me.js"></script>
   <script src="JS/3D.js"></script>

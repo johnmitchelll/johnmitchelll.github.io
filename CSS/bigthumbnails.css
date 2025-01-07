@@ -77,7 +77,7 @@
 }
 
 .rank_bottom_sub_left h5{
-    font-size: 8px;
+    font-size: 7px;
     line-height: 10px;
     font-weight: 200;
 }
@@ -88,7 +88,7 @@
     bottom: 175px;
     width: 400px;
     color: var(--white);
-    font-size: 10px;
+    font-size: 7px;
     line-height: 12px;
     font-weight: 100;
     display: flex;
@@ -102,7 +102,7 @@
 
 #rank_line_art div{
     width: 200px;
-    height: 1px;
+    height: 0.5px;
     background-color: var(--white);
     margin-right: 10px;
     align-self: center;
@@ -369,6 +369,7 @@
     height: 200px;
     background: linear-gradient(to top, rgba(253,251,248, 0.15) 0%, transparent 75%);
     border: 1px solid var(--lightgrey);
+    z-index: 2;
 }
 
 #pf_box_cir{
@@ -409,10 +410,31 @@
     transition: all 0.2s ease;
 }
 
-#pathfinding_thumbnail:hover #pf_top_blurb{
-    right: 30px;
+#pathfinding_thumbnail:hover #pf_faded_lights_art{
+    filter: blur(30px);
 }
 
-#pathfinding_thumbnail:hover #pf_right_blurb{
+/* #pathfinding_thumbnail:hover #pf_right_blurb{
     top: 90px;
+} */
+
+#pf_faded_lights_art{
+    width: 200px;
+    height: 200px;
+    z-index: 0;
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    transition: filter 0.2s ease;
+    filter: blur(10px);
+}
+
+#pf_box_background{
+    width: 201px;
+    height: 201px;
+    position: absolute;
+    background-color: var(--purple);
+    z-index: 1;
+    left: 30px;
+    bottom: 40px;
 }

@@ -50,6 +50,21 @@ function DrawableSurface(id){
   
 }
 
+function goBack(){
+  let cover = document.createElement("div");
+  cover.style.width = "100vw";
+  cover.style.height = "100vh";
+  cover.style.position = "fixed";
+  cover.style.zIndex = "99999";
+  cover.style.backgroundColor = "rgb(18,18,18)";
+  container.appendChild(cover);
+  cover.style.animation = "fadeIn 0.5s linear";
+
+  setTimeout(() => {
+    window.history.back();
+  }, 500);
+}
+
 function goTo(path){  
   
   let cover = document.createElement("div");

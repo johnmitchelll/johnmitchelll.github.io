@@ -27,7 +27,7 @@ function deleteHeroString(){
             heroStringIndex[0] = 0;
         }
 
-        goThroughTypingAnimation();
+        setTimeout(goThroughTypingAnimation, 300 + Math.random() * 700);
 
         return;
     }

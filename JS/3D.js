@@ -8,7 +8,7 @@ const SCREEN_HEIGHT = 270;
 
 // scaled down
 const WORLD_WIDTH = 1;
-const WORLD_HEIGHT = SCREEN_WIDTH / SCREEN_HEIGHT * 1.5;
+const WORLD_HEIGHT = SCREEN_WIDTH / SCREEN_HEIGHT * 1.2;
 
 const camera_origin = { x: 0, y: 0, z: -1 };
 
@@ -132,18 +132,18 @@ function handlePoints(){
                                       (-1 * intersection.y / WORLD_HEIGHT * SCREEN_HEIGHT) + SCREEN_HEIGHT/2, 0.5, "rgba(255,255,255,0.2)");
     }
 
-    drawPointLineToPointLine(0, 1);
-    drawPointLineToPointLine(1, 2);
-    drawPointLineToPointLine(2, 3);
-    drawPointLineToPointLine(3, 0);
-    drawPointLineToPointLine(1, 5);
-    drawPointLineToPointLine(2, 6);
-    drawPointLineToPointLine(0, 4);
-    drawPointLineToPointLine(3, 7);
-    drawPointLineToPointLine(6, 7);
-    drawPointLineToPointLine(5, 4);
-    drawPointLineToPointLine(5, 6);
-    drawPointLineToPointLine(4, 7);
+    // drawPointLineToPointLine(0, 1);
+    // drawPointLineToPointLine(1, 2);
+    // drawPointLineToPointLine(2, 3);
+    // drawPointLineToPointLine(3, 0);
+    // drawPointLineToPointLine(1, 5);
+    // drawPointLineToPointLine(2, 6);
+    // drawPointLineToPointLine(0, 4);
+    // drawPointLineToPointLine(3, 7);
+    // drawPointLineToPointLine(6, 7);
+    // drawPointLineToPointLine(5, 4);
+    // drawPointLineToPointLine(5, 6);
+    // drawPointLineToPointLine(4, 7);
 
     drawPointLineToPointLine(12, 14);
     drawPointLineToPointLine(14, 15);
