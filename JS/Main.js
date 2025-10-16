@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   assignTime();
 
-  faded_lights.init();
+  // faded_lights.init();
 
   setInterval(() => {
     updateDynamicScrollers();
     night_sky.drawNightSky();
     three_dimentional.draw();
-    faded_lights.draw();
+    // faded_lights.draw();
   }, 1000/30);
 
   

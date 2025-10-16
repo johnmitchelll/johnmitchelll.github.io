@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>Connect 4</title>
+
+  <link rel = "stylesheet" type = "text/css" href = "../../../CSS/index.css">
+
+  <link rel="icon" href="../../../IMGS/icon.png" type="image/png">
+</head>
+
+<style>
+
+  *{
+    margin:0;
+    padding: 0;
+    background: #121212;
+  }
+
+  #container{
+    width: 100vw;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: header_font;
+  }
+
+  #gameCanvas {
+    align-self: center;
+    min-width: 500px;
+    max-width: 50%;
+    min-height: calc(600px * 500px / 700px);
+    max-height: 50%;
+    cursor: pointer;
+    position: relative;
+    margin-top: 40px;
+  }
+
+  #gameCanvas h1{
+    color: var(--white);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+  }
+
+  #back_arrow_container{
+    position: absolute;
+    left: 80px;
+    top: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#back_arrow_container h2{
+    font-size: 36px;
+    line-height: 36px;
+    color: var(--white);
+    align-self: center;
+    width: fit-content;
+    font-weight: 200;
+}
+
+#container h3 {
+  color: var(--white);
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 300;
+  text-align: center;
+  align-self: center;
+  margin-top: 40px;
+}
+
+#restart{
+  padding: 20px 40px;
+  color: var(--white);
+  border: 1px solid var(--white);
+  align-self: center;
+  border-radius: 5px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#info_text{
+  color: white;
+  font-size: 64px;
+  position: fixed;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+
+  </style>
+
+<body>
+<div id="container">
+  <div id="back_arrow_container" onclick="goBack()">
+    <h2>←</h2>
+  </div>
+
+  <canvas id="gameCanvas" width="700" height="600"></canvas>
+  <h1 id="info_text"></h1>
+
+  <h3>Click on the column you wish to play</h3>
+
+  <button id="restart" onclick="start()">Restart</button>
+</div>
+
+
+<script src="js/Main.js"></script>
+<script src="js/Grid.js"></script>
+<script src="js/Move.js"></script>
+<script src="js/Brain.js"></script>
+<script src="../../../JS/Class.js"></script>
+
+</body>
+</hmtl>
+
+

@@ -5,7 +5,7 @@ var perlinRefreshTimer;
 
 var SCALE = 4;
 var cols, rows;
-var particles = new Array(100);
+var particles = new Array(200);
 
 var flowFeild;
 

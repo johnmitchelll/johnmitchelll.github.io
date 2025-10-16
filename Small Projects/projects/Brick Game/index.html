@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Game</title>
+</head>
+
+<link rel="icon" href="../../../IMGS/icon.png" type="image/png">
+
+<style>
+
+    @font-face {
+        font-family: pixel_font;
+        src: url('./pixel.ttf');
+    }  
+    
+    *{
+        margin: 0;
+        font-family: pixel_font;
+    } 
+
+    #container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(18,18,18);
+        position: relative;
+    }
+
+    #canvas{
+        align-self: center;
+    }
+
+    #input_panel{
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+    }
+
+    .click{
+        padding: 7.5px 15px;
+        color: rgb(18,18,18);
+        background-color: white;
+        border-radius: 2px;
+        font-size: 36px;
+        margin: 0px 0px 0px 15px;
+    }
+
+    #stop{
+        display: none;
+    }
+
+    #speed_panel{
+        display: flex;
+        flex-direction: column;
+        display: none;
+        justify-content: center;
+        margin: 0px 0px 0px 15px;
+    }
+
+    #speed_panel * {
+        align-self: center;
+    }
+
+    #speed {
+        background: white;
+        accent-color: rgb(18,18,18);
+        cursor: pointer !important;
+    }
+
+    #speed_indicator{
+        text-align: center;
+        font-size: 36px;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+
+        <div id="input_panel">
+            <button class="click" id="help" onclick="handleHelp()">Help</button>
+            <button class="click" id="stop" onclick="handleStop()">Stop</button>
+
+            <div id="speed_panel">
+                <input type="range" min="1" max="100" class="slider" id="speed">
+                <p id="speed_indicator">Speed: 50%</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="./js/input.js"></script>
+    <script src="./js/class.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/graphics.js"></script>
+    <script src="./js/brain.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

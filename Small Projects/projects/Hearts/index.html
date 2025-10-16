@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearts</title>
+</head>
+
+<link rel="icon" href="../../../IMGS/icon.png" type="image/png">
+
+<style>
+    
+    @font-face {
+        font-family: pixel_font;
+        src: url('./pixel.ttf');
+    }  
+    
+    *{
+        margin: 0;
+        font-family: pixel_font;
+    }
+
+    #container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(18,18,18);
+        position: relative;
+    }
+
+    #canvas{
+        align-self: center;
+    }
+
+    .click{
+        padding: 1% 2%;
+        border: 1px solid black;
+        background-color: white;
+        position: absolute;
+        font-size: calc(2vw + 2vh);
+    }
+
+    #pass{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #num_cards{
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 2vw + 2vh + 3%);
+        font-size: calc(2vw + 2vh);
+        transform: translate(-50%, -50%);
+    }
+
+    #playAgain{
+        display: none;
+        left: 50%;
+        bottom: 10%;
+        transform: translate(-50%, 0%);
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <button id="playAgain" class="click" onclick="setUp()">PLAY AGAIN</button>
+        <button id="scores" class="click" onclick="toggleScorePage()">SCORES</button>
+        <canvas id="canvas"></canvas>
+        <button id="pass" class="click" onclick="passCards()">PASS CARD</button>
+        <h1 id="num_cards">PICK CARDS TO PASS: 0 / 3</h1>
+    </div>
+    
+    <script src="./js/global.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/class.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/graphics.js"></script>
+    <script src="./js/brain.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

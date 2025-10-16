@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rasterizer</title>
+    <link rel="icon" href="./icon.png" type="image/png">
+</head>
+
+<style>
+    
+    *{
+        margin: 0;
+    }
+
+    #container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(18,18,18);
+    }
+
+    #canvas{
+        align-self: center;
+    }
+
+    #file_input{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+        <input id="file_input" type="file" id="fileInput">
+    </div>
+    
+    <script src="./JS/Helpers.js"></script>
+    <script src="./JS/Class.js"></script>
+    <script src="./JS/File_Read.js"></script>
+    <script src="./JS/Global.js"></script>
+    <script src="./JS/Graphics.js"></script>
+    <script src="./JS/Logic.js"></script>
+    <script src="./JS/Input.js"></script>
+    <script src="./JS/Main.js"></script>
+
+</body>
+</html>

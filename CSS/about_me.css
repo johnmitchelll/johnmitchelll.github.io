@@ -47,6 +47,7 @@
   0% {
     width: 0%;
     height: 0%;
+    transform: translate(5vw, 15vh) rotate(225deg);
   }
   50% {
     width: 25px;
@@ -57,6 +58,7 @@
   100% {
     width: 0%;
     height: 0%;
+    transform: translate(0vw, 20vh)
   }
 }
 

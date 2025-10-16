@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="user-scalable=no" />
+  <title>Johnny Mitchell</title>
+</head>
+
+<link rel="icon" href="../IMGS/icon.png" type="image/png">
+
+<link rel = "stylesheet" type = "text/css" href = "../CSS/index.css">
+<link rel = "stylesheet" type = "text/css" href = "../CSS/secondpage.css">
+<link rel = "stylesheet" type = "text/css" href = "./connectfour.css">
+
+
+<body>
+    <div id="container">
+
+      <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+        <filter id='noiseFilter'>
+          <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='10' 
+            numOctaves='3' 
+            stitchTiles='stitch'/>
+        </filter>
+        
+        <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+      </svg>
+
+      <div id="container_sub">
+        <div id="back_arrow_container" onclick="goBack()">
+          <h2>←</h2>
+        </div>
+  
+        <div id="top_container">
+          <h1>Chess AI</h1>
+          <a href="https://github.com/johnmitchelll/Chess_Bot"><img src="../IMGS/github.svg"></a>
+        </div>
+  
+        <div id="mid_container">
+  
+          <div id="mid_top">
+            <p id="mid_p_top">
+                This chess project is very close to my heart. A while back, I got into a month or 
+                two-long kick of playing chess every day and researching how chess engines actually 
+                work. I was fascinated by the complexity behind even the simplest moves and wanted to 
+                understand what made chess bots so good. That curiosity eventually turned into a 
+                challenge I set for myself: build a chess engine from scratch, entirely in JavaScript, 
+                running in the browser.<br><br>
+  
+                It wasn’t easy. Writing a game like this in a single-threaded environment brings a lot of performance 
+                limitations, and making it efficient took a lot of experimenting and problem-solving. But 
+                after a lot of time and iteration, I ended up with something I’m genuinely proud of a 
+                chess bot that can at least beat me. Still, it plays decently, and I hope you have fun 
+                trying to beat it. This project taught me a lot and reminded me why I love programming. 
+                I poured a lot into it, and I absolutely love how it turned out.
+            </p>
+  
+            <div id="mid_image_wrapper">
+              <div id="bottom_img_backdrop"></div>
+              <div id="bottom_img_container">
+                <img src="./IMGS/c1.png" class="display_image">
+                <img src="./IMGS/c2.png">
+                <img src="./IMGS/c3.png">
+              </div>
+            </div>
+          </div>
+          
+  
+          <p id="mid_p_bottom">
+              <!-- Each one of these bird's brains take in three bits of information and can make one decision: to jump, or not jump.
+              They can see the horizontal distance to the next pole (green) and the vertical height to the top and bottom of the 
+              next pole (blue and red). This works well with something as simple as Flappy Bird because of the minimal complexity. 
+              This is one of the most simple versions of what people consider AI today and is a great visualization as to what 
+              simulated integligence is. -->
+          </p>
+        </div>
+  
+        <div id="bottom_container">
+          <button onclick="goTo('./project/index.html')">Check this Project Out</button>
+        </div>
+
+        <div class="cf_line_art" style="--e: 1;"></div>
+        <div class="cf_line_art" style="--e: 2;"></div>
+        <div class="cf_line_art" style="--e: 3;"></div>
+      </div>
+    </div>
+      
+
+    <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
+</body>
+</hmtl>

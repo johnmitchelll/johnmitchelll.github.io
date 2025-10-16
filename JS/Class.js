@@ -66,7 +66,6 @@ function goBack(){
 }
 
 function goTo(path){  
-  
   let cover = document.createElement("div");
   cover.style.width = "100vw";
   cover.style.height = "100vh";

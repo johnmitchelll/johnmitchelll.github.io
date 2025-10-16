@@ -17,6 +17,13 @@
 <body>
     <div id="container">
 
+      <div id="star">
+        <div class="star_sub" id="star_sub_1"></div>
+        <div class="star_sub" id="star_sub_2"></div>
+        <div class="star_sub" id="star_sub_3"></div>
+        <div class="star_sub" id="star_sub_4"></div>
+      </div>
+
       <svg id="grainy_overlay" viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
         <filter id='noiseFilter'>
           <feTurbulence 
@@ -39,11 +46,55 @@
         <div id="top_container">
           <h1>Small Projects and Visuals</h1>
         </div>
+
+        <div id="bottom_container">
+          <div id="left_bottom">
+            <div class="element" onclick="goTo('./projects/Mancala/index.html')">
+              <span>Mancala</span>
+              →
+            </div>
+            <div class="element" onclick="goTo('./projects/Hearts/index.html')">
+              <span>Hearts</span>
+              →
+            </div>
+            <div class="element" onclick="goTo('./projects/Blackjack/index.html')">
+              <span>Blackjack</span>
+              →
+            </div>
+            <div class="element" onclick="goTo('./projects/Brick%20Game/index.html')">
+              <span>Brick Game</span>
+              →
+            </div>
+            <div class="element" onclick="goTo('./projects/Connect Four/index.html')">
+              <span>Connect Four</span>
+              →
+            </div>
+            <div class="element" onclick="goTo('./projects/Flocking/index.html')">
+              <span>Flocking Simulation</span>
+              →
+            </div>
+          </div>
+
+          <div id="right_bottom">
+            <div id="bottom_img_container">
+              <img src="./IMGS/sp1.png" class="display_image">
+              <img src="./IMGS/sp2.png">
+              <img src="./IMGS/sp3.png">
+              <img src="./IMGS/sp4.png">
+              <img src="./IMGS/sp5.png">
+              <img src="./IMGS/sp6.png">
+              <img src="./IMGS/sp7.png">
+            </div>
+          </div>
+        </div>
   
       </div>
     </div>
-      
 
     <script src="../JS/Class.js"></script>
+
+    <script>
+      cycleThroughImages(document.getElementById('bottom_img_container'));
+    </script>
 </body>
 </hmtl>

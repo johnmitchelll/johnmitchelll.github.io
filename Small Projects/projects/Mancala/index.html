@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mancala</title>
+</head>
+
+<link rel="icon" href="../../../IMGS/icon.png" type="image/png">
+
+<style>
+    
+    @font-face {
+        font-family: pixel_font;
+        src: url('./content/pixel.ttf');
+    }  
+    
+    *{
+        margin: 0;
+        font-family: pixel_font;
+        cursor: url("./content/cursor.png"), auto;
+    }
+
+    #container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(18,18,18);
+        position: relative;
+    }
+
+    #canvas{
+        align-self: center;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+    </div>
+    
+    <script src="./js/global.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/class.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/graphics.js"></script>
+    <script src="./js/brain.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

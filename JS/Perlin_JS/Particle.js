@@ -32,10 +32,10 @@ function Particle() {
 
   this.show = function(color) {
     if(color){
-      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(35, 25, 112, 0.4)')
+      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(35, 25, 112, 0.5)')
       // perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba('+r+','+g+','+b+','+0.4+'')
     }else{
-      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.075)')
+      perlinCanvas.colorCircle(this.posX,this.posY, 0.5, 'rgba(235, 64, 52, 0.1)')
     }
     
   }
