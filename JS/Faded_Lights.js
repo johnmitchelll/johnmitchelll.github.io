@@ -1,16 +1,16 @@
-const pf_path = document.getElementById('animatedPath');
-const pf_hoverTarget = document.querySelector('.hover-target');
+// const pf_path = document.getElementById('animatedPath');
+// const pf_hoverTarget = document.querySelector('.hover-target');
 
-const pf_originalD = "M-5,150 Q150,250, 150,350 T350,503";
-const pf_hoverD    = "M-5,150 Q150,150, 150,350 T350,403"; // change shape for demo
+// const pf_originalD = "M-5,150 Q150,250, 150,350 T350,503";
+// const pf_hoverD    = "M-5,150 Q150,150, 150,350 T350,403"; // change shape for demo
 
-pf_hoverTarget.addEventListener('mouseenter', () => {
-  pf_path.setAttribute("d", hoverD);
-});
+// pf_hoverTarget.addEventListener('mouseenter', () => {
+//   pf_path.setAttribute("d", hoverD);
+// });
 
-pf_hoverTarget.addEventListener('mouseleave', () => {
-  pf_path.setAttribute("d", originalD);
-});
+// pf_hoverTarget.addEventListener('mouseleave', () => {
+//   pf_path.setAttribute("d", originalD);
+// });
 
 
 // var faded_lights = new DrawableSurface('pf_faded_lights_art');
