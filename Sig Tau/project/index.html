@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <hta:application innerborder="no" /> -->
+
+  <title>Sig Tau Sign Up</title>
+  <link rel="icon" href="./stg.jpg" />
+
+  <link rel = "stylesheet" type = "text/css" href = "./Sigma Tau Gamma.css">
+</head>
+
+
+<style>
+
+@font-face {
+ font-family: customfont;
+ src: url('./font.otf');
+}
+
+</style>
+
+<body>
+
+  <div id="body">
+
+    <div id="logo">
+       <img id="SigTauRedLogo" src="./imgs/icon.png">
+    </div>
+
+    <video id="RushVid" src="./imgs/video.mp4" controls autoplay>
+    <source type="video/mp4">
+    </video>
+
+    <img id="Jordan" src="./imgs/tilting.png">
+    <img id="rushShirt" src="./imgs/topLeft.png">
+    <img id="rushInfo" src="./imgs/rushEvents.png">
+
+    <h4 id="CheckOut">Rush Video...</h4>
+    <h4 id="SignUp">Sign Up Below</h4>
+    <h4 id="schedule">Rush Schedule...</h4>
+
+    <h4 id="infoName" class="infoLabel" >Name (First and Last)</h4>
+    <input id="formName" class="info" placeholder="Name...">
+
+    <h4 id="infoGpa" class="infoLabel">Most recent GPA</h4>
+    <input type="text" id="formGpa" class="info" placeholder="GPA...">
+
+    <h4 id="infoInsta" class="infoLabel">Instagram</h4>
+    <input type="text" id="formInsta" class="info" placeholder="Insta...">
+
+    <h4 id="infoEmail" class="infoLabel">Email (ASU or Personal)</h4>
+    <input type="text" id="formEmail" class="info" placeholder="Email...">
+
+    <h4 id="infoNumber" class="infoLabel">Phone Number</h4>
+    <input type="text" id="formNumber" class="info" placeholder="Number...">
+
+    <button id="submit" onclick="sendUserData()">Submit Info</button>
+    <h4 id="sumbitResult" class="infoLabel"></h4>
+
+    <img id="triGraphic" src="./imgs/bottom.png">
+
+
+    <canvas id="canvas"></canvas>
+    <script src="js/Main.js"></script>
+    <script src="js/Helpers.js"></script>
+    <script src="js/Global.js"></script>
+    <script src="js/HTML.js"></script>
+
+  </div>
+
+</body>
+</hmtl>
+
+

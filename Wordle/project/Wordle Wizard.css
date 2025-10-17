@@ -1,0 +1,109 @@
+  *{
+    margin:0;
+    padding: 0;
+    background: #121212 ;
+    font-family: sans-serif;
+    touch-action: pan-y;
+  }
+
+/*  .borderOne {
+      border: "solid 2px white" ; 
+  }
+
+  .borderTwo {
+      border: "solid 2px rgb(59, 59, 59)";
+  }
+*/
+
+  #testDiv {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+  }
+
+  #testInfo {
+    width: 90%;
+    height: 10%;
+    color: white;
+    border: solid 1px white;
+    margin-bottom: 5%;
+    height: 90vh;
+  }
+
+  #wordSearch {
+    text-decoration: none;
+    font-size: 2vw;
+    color: white;
+    border: solid 1px white;
+    padding: 1%;
+    margin: 5%;
+    width: 97%;
+    height: 4vw;
+    align-self: center;
+  }
+
+  #wordList {
+/*    position: fixed;*/
+    overflow-x: scroll; /* allows this to be scrolled individually */
+/*    touch-action: pan-y !important;*/
+  }
+
+  #interact {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+/*    touch-action: pan-y !important;*/
+  }
+
+  #wordle {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #top {
+    width: 100%;
+    height: 56%;
+    display: flex;
+    align-self: center;
+    max-width: 900px;
+    justify-content: center;
+/*    touch-action: pan-y !important;*/
+  }
+
+  #bottom {
+    width: 100%;
+    height: 36%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    max-width: 900px;
+  }
+
+  #test {
+    width: 40%;
+    height: 4vw;
+    color: white;
+    border: solid 1px grey;
+    font-size: 1.5vw;
+    align-self: stretch;
+  }
+
+  #logo {
+    width: 56.25%;
+    color: white;
+    font-size: 3vw;
+    align-self: center;
+    text-align: center;
+  }
+
+  #body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

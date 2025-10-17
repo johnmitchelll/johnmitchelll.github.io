@@ -1,0 +1,181 @@
+  * {
+     background-color: #121212;
+     margin: 0px;
+     padding: 0px;
+  }
+
+  * input {
+    font-size: 16px !important;
+  }
+
+  #sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      overflow-y: scroll; /* allows this to be scrolled individually */
+      top: 0;
+      left: 0;
+      background-color: #121212;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .text{
+      color: white;
+      margin: 0px;
+      align-self: center;
+      margin: 10px;
+  }
+
+  .slider{
+      -webkit-appearance: none;
+      background: #5B5B5B  ;
+      width: 100px%;
+      height: 20px;
+      padding: 2px;
+      align-self: center;
+  }
+
+  .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      cursor: pointer;
+      background: #0000FF ;
+      width: 10%;
+      height: 22px;
+      align-self: center;
+  }
+
+  #sidenav #form-group {
+      margin-top: 10px;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 7px;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 90%;
+      align-self: center;
+  }
+
+  .button {
+      color: white;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      width: fit-content;
+      margin: 10px;
+      padding: 5px;
+      background-color: #121212;
+      border: 2px solid blue;
+  }
+
+  .button:hover {
+      background-color: white;
+      color: #121212;
+  }
+
+  .button_enabled {
+      color: #121212;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      width: fit-content;
+      margin: 10px;
+      padding: 5px;
+      background-color: white;
+      border: 2px solid blue;
+  }
+
+  .setXVal {
+      color: white;
+      display: flex;
+      justify-content: center;
+  }
+
+  .setXVal span{
+      cursor: default;
+  }
+
+  .setXVal input{
+      border: 2px solid blue;
+      text-decoration: none;
+      color: white;
+  }
+
+  .setYVal {
+    align-self: center;
+  }
+
+  #sidenav .inc {
+      width: 90%;
+      font-size: 20px;
+      padding: 0px;
+      align-self: center;
+  }
+
+  #canvas{
+      margin-left: 250px;
+      position: fixed;
+      right: 0;
+      top: 0;
+  }
+
+
+  /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+  #keyboard {
+    bottom: 0;
+    position: fixed;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 7px;
+    overflow-y: auto; /* allows this to be scrolled individually */
+  }
+
+  #keyboard .keyboard_button {
+    align-self: center;
+    margin: 2px;
+  }
+
+  #keyboard  #activated_keyboard {
+    display: none;
+    padding: 10px;
+    flex-direction: column;
+    width: 75%;
+    align-content: space-around;
+  }
+
+  #keyboard  #activated_keyboard div {
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+  }
+
+  .flex_grow {
+    flex-grow: 1;
+  }
+
+  #keyboard  #activated_keyboard .background_enabled {
+    background: rgb(75,75,75);
+  }
+
+
+  /* width */
+  #keyboard::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  #keyboard::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  #keyboard::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  #keyboard::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

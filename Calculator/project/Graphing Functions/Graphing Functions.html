@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="width=device-width">
+  <title>Graphing Equations</title>
+  <link rel="icon" href="../icon.png" />
+
+  <link rel = "stylesheet" type = "text/css" href = "./Graph Style.css">
+</head>
+
+<body>
+    <div id="sidenav">
+      <div id="form-group"></div>
+
+      <button class="button inc" onClick="addFunction()">+</button>
+
+    </div>
+
+    <div id="canvas" >
+
+      <canvas id="gameCanvas" width="600" height="700"></canvas>
+      <script src="js/Main.js"></script>
+      <script src="js/Helpers.js"></script>
+      <script src="js/HTML.js"></script>
+      <script src="js/Parse.js"></script>
+      <script src="js/Graphics.js"></script>
+      <script src="js/Graph.js"></script>
+      <script src="js/Input.js"></script>
+
+    </div>
+
+
+    <div id="keyboard">
+
+      <div id="activated_keyboard">
+          <div id="operations" class="background_enabled">
+            <button class="button keyboard_button" 
+            onClick="handleFormInputFromKeyBoard({type:'action', val:'up'})">Function Up</button>
+            <button class="button keyboard_button" 
+            onClick="handleFormInputFromKeyBoard({type:'action', val:'down'})">Function Down</button>
+            <button class="button keyboard_button" 
+            onClick="handleFormInputFromKeyBoard({type:'action', val:'left'})">Move Left</button>
+            <button class="button keyboard_button" 
+            onClick="handleFormInputFromKeyBoard({type:'action', val:'right'})">Move Right</button>
+            <button class="button keyboard_button" 
+            onClick="handleFormInputFromKeyBoard({type:'action', val:'backspace'})">Backspace</button>
+            <button class="button keyboard_button" 
+            onClick="toggleKeyBoard()">Toggle Keyboard</button>
+          </div>
+
+          <div id="nums" class="background_enabled">
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'0'})">0</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'1'})">1</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'2'})">2</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'3'})">3</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'4'})">4</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'5'})">5</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'6'})">6</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'7'})">7</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'8'})">8</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'9'})">9</button>
+          </div>
+
+          <div id="vars" class="background_enabled">
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'x'})">x</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'pi'})">pi</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'e'})">e</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'j'})">j</button>
+          </div>
+
+          <div id="functions" class="background_enabled">
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'-'})">-</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'+'})">+</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'*'})">*</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'/'})">/</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'^'})">^</button>
+            <button class="button keyboard_button flex_grow" 
+
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'sqrt('})">sqrt()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'sin('})">sin()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'cos('})">cos()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'tan('})">tan()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'csc('})">csc()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'sec('})">sec()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'cot('})">cot()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:'abs('})">abs()</button>
+            <button class="button keyboard_button flex_grow" 
+            onClick="handleFormInputFromKeyBoard({type:'text', val:')'})">)</button>
+          </div>
+
+          <input type="range" min="25" max="500" value="100" class="slider" id="n">
+
+          <div class="text">
+            <span id="n_text">Number of Partitions = </span>
+          </div>
+
+          <div class="setXVal">
+            <span>a = </span>
+            <input inputmode="none" type="form" id="a_equals" value="-pi">
+          </div>
+
+          <div class="setXVal">
+            <span>b = </span>
+            <input inputmode="none" type="form" id="b_equals" value="pi">
+          </div>
+
+          <div class="setXVal">
+            <span>Cursor x = </span>
+            <input inputmode="none" type="form" id="cursorX_equals" value="">
+          </div>
+
+          <div class="setYVal">
+            <button class="button" id="yVal1" onClick="lockCursorToFirstFunciton()">Lock Cursor y to First Function</button>
+          </div>
+      </div>
+
+      <button class="button keyboard_button" id="up" onClick="toggleKeyBoard()">Toggle Keyboard</button>
+    </div>
+
+</body>
+</hmtl>
+
+

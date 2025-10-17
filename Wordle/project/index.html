@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- <hta:application innerborder="no" /> -->
+  <title>Wordle Cypher</title>
+  <link rel="icon" href="./icon.png">
+
+  <link rel = "stylesheet" type = "text/css" href = "./Wordle Wizard.css">
+</head>
+
+<body>
+
+  <div id="body">
+        <p id="logo">WORDLE CYPHER</p>
+
+      <div id="top">
+
+        <div id="testDiv">
+          <div id="testInfo"></div>  
+          <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="interact">
+          <button id="test" onclick="goToScene(3)">MENU</button>
+          <input type="form" id="wordSearch" placeholder="SEARCH WORD..." disabled>
+
+        <div id="wordList"></div>
+
+      </div>
+
+      <div id="wordle"></div>
+    </div>
+
+    <div id="bottom"></div>
+
+    <script src="js/Main.js"></script>
+    <script src="js/Helpers.js"></script>
+    <script src="js/Words.js"></script>
+    <script src="js/Global.js"></script>
+    <script src="js/Brain.js"></script>
+    <script src="js/Input.js"></script>
+    <script src="js/WordGrid.js"></script>
+    <script src="js/Test.js"></script>
+    <script src="js/HTML.js"></script>
+    <script src="js/Scenes.js"></script>
+  </div>
+
+</body>
+</hmtl>
+
+
