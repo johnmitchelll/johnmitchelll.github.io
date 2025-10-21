@@ -183,7 +183,8 @@ function runFade() {
     el.offsetHeight; // trigger reflow
     el.style.animation = 'fadeIn 2s ease forwards'; // start again
 
-    console.log("HI")
+    console.log(Math.random());
 }
 
 document.addEventListener('DOMContentLoaded', runFade);
+window.addEventListener('pageshow', runFade);
