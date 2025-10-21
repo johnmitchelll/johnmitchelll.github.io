@@ -174,3 +174,19 @@ function cycleThroughImages(div){
     }
   }
 }
+
+
+
+function runFade() {
+    const el = document.getElementById('container');
+    if (!el) return;
+    el.classList.remove('fade-in');
+    void el.offsetWidth;
+    el.classList.add('fade-in');
+}
+
+document.addEventListener('DOMContentLoaded', runFade);
+
+window.addEventListener('pageshow', (e) => {
+    if (e.persisted) runFade();
+});
