@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/shield.png" type="image/png">
+    <title>Durak</title>
+</head>
+
+<style>
+    
+    @font-face {
+        font-family: pixel_font;
+        src: url('./pixel.ttf');
+    }  
+    
+    * {
+        margin: 0;
+        font-family: pixel_font;
+    }
+
+    #container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(18,18,18);
+        position: relative;
+    }
+
+    #canvas {
+        align-self: center;
+    }
+
+
+</style>
+
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+    </div>
+    
+    <script src="./js/global.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/class.js"></script>
+    <script src="./js/card.js"></script>
+    <script src="./js/graphics.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/button.js"></script>
+    <script src="./js/scenes.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/brain.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
