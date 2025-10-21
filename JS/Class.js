@@ -67,6 +67,7 @@ function goBack(){
 
 function goTo(path){  
   let cover = document.createElement("div");
+  cover.id = "screen_cover";
   cover.style.width = "100vw";
   cover.style.height = "100vh";
   cover.style.position = "fixed";
@@ -178,12 +179,8 @@ function cycleThroughImages(div){
 
 
 function runFade() {
-    const el = document.getElementById('container');
-    el.style.animation = 'none'; // stop any running animation
-    el.offsetHeight; // trigger reflow
-    el.style.animation = 'fadeIn 2s ease forwards'; // start again
-
-    console.log(Math.random());
+    const oldCover = document.getElementById('screen_cover');
+    if (oldCover) oldCover.remove();
 }
 
 document.addEventListener('DOMContentLoaded', runFade);
