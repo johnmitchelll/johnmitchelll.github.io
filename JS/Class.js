@@ -177,29 +177,13 @@ function cycleThroughImages(div){
 
 
 
-function restartFade(){
-    const el=document.getElementById('container');
-    if(!el) return;
-    el.classList.remove('fade-in');
-    el.style.animation='none';
+function runFade() {
+    const el = document.getElementById('container');
+    el.style.animation = 'none'; // stop any running animation
+    el.offsetHeight; // trigger reflow
+    el.style.animation = 'fadeIn 2s ease forwards'; // start again
 
     console.log("HI")
-
-    requestAnimationFrame(()=>{
-        void el.offsetWidth;
-        el.style.animation='';
-        el.classList.add('fade-in');
-    });
 }
 
-function primeForLeave(){
-    const el=document.getElementById('container');
-    if(!el) return;
-    el.classList.remove('fade-in');
-    el.style.animation='none';
-    el.style.opacity=0;
-}
-
-document.addEventListener('DOMContentLoaded', restartFade);
-window.addEventListener('pageshow', restartFade);
-window.addEventListener('pagehide', primeForLeave);
+document.addEventListener('DOMContentLoaded', runFade);
