@@ -178,23 +178,26 @@ function cycleThroughImages(div){
 
 
 function restartFade(){
-  const el=document.getElementById('container');
-  if(!el) return;
-  el.classList.remove('fade-in');
-  el.style.animation='none';
-  requestAnimationFrame(()=>{
-    void el.offsetWidth;
-    el.style.animation='';
-    el.classList.add('fade-in');
-  });
+    const el=document.getElementById('container');
+    if(!el) return;
+    el.classList.remove('fade-in');
+    el.style.animation='none';
+
+    console.log("HI")
+
+    requestAnimationFrame(()=>{
+        void el.offsetWidth;
+        el.style.animation='';
+        el.classList.add('fade-in');
+    });
 }
 
 function primeForLeave(){
-  const el=document.getElementById('container');
-  if(!el) return;
-  el.classList.remove('fade-in');
-  el.style.animation='none';
-  el.style.opacity=0;
+    const el=document.getElementById('container');
+    if(!el) return;
+    el.classList.remove('fade-in');
+    el.style.animation='none';
+    el.style.opacity=0;
 }
 
 document.addEventListener('DOMContentLoaded', restartFade);
