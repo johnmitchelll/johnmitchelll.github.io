@@ -181,6 +181,13 @@ function cycleThroughImages(div){
 function runFade() {
     const oldCover = document.getElementById('screen_cover');
     if (oldCover) oldCover.remove();
+
+    const el = document.getElementById('container');
+    if (!el) return;
+
+    el.classList.remove('fade-in');
+    void el.offsetWidth; // reflow
+    el.classList.add('fade-in');
 }
 
 document.addEventListener('DOMContentLoaded', runFade);
