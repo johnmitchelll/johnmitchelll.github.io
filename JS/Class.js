@@ -177,16 +177,26 @@ function cycleThroughImages(div){
 
 
 
-function runFade() {
-    const el = document.getElementById('container');
-    if (!el) return;
-    el.classList.remove('fade-in');
+function restartFade(){
+  const el=document.getElementById('container');
+  if(!el) return;
+  el.classList.remove('fade-in');
+  el.style.animation='none';
+  requestAnimationFrame(()=>{
     void el.offsetWidth;
+    el.style.animation='';
     el.classList.add('fade-in');
+  });
 }
 
-document.addEventListener('DOMContentLoaded', runFade);
+function primeForLeave(){
+  const el=document.getElementById('container');
+  if(!el) return;
+  el.classList.remove('fade-in');
+  el.style.animation='none';
+  el.style.opacity=0;
+}
 
-window.addEventListener('pageshow', (e) => {
-    if (e.persisted) runFade();
-});
+document.addEventListener('DOMContentLoaded', restartFade);
+window.addEventListener('pageshow', restartFade);
+window.addEventListener('pagehide', primeForLeave);
